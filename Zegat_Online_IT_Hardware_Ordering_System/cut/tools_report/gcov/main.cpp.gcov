@@ -1,0 +1,215 @@
+        -:    0:Source:main.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/**********************************************************************************
+        -:    2:
+        -:    3:
+        -:    4:FILENAME: main.cpp
+        -:    5:DESCRIPTION:This file is used to display the main menu to the user.
+        -:    6:
+        -:    7:DATE            NAME              REASON
+        -:    8:------------------------------------------------------------------
+        -:    9:20/9/22         Group-4          This is done for creation of menu  	
+        -:   10:
+        -:   11: *********************************************************************************/
+        -:   12:
+        -:   13:#include <iostream>       //Including required Header files
+        -:   14:#include <string>      //Includes string functions
+        -:   15:#include <iomanip>
+        -:   16:#include "menu.cpp"
+        -:   17:#include "func1.cpp"
+        -:   18:#include "func2.cpp"
+        -:   19:#include "func3.cpp"
+        -:   20:#include "header.hpp"
+        -:   21:#include "validations.cpp"
+        -:   22:using namespace std;
+        -:   23:
+        -:   24:
+function main called 1 returned 100% blocks executed 56%
+        1:   25:int main()        
+        -:   26:{
+        1:   27:	product_file_to_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28:	transaction_file_to_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29:	customer_file_to_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30:	supplier_file_to_list();	
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31:	int choice=0;
+        1:   32:	int (*option[3])()={admin_corner,supplier_corner,customer_corner};      //Using Pointer to Function
+        2:   33:	while(choice!=4)
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        -:   34:	{	
+        -:   35:		//Displaying Main Menu
+        2:   36:		cout<<"\n-----------------------------------------------\n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   37:		cout<<"               Welcome to ZOIHO";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   38:		cout<<"\n-----------------------------------------------\n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   39:		cout<<"\n\t1.Admin Corner\n\t2.Supplier Corner\n\t3.Customer Corner\n\t4.Exit";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   40:		cout<<endl<<"\nEnter your choice: \n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   41:		cin>>temp;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   42:		try 
+        -:   43:		{
+        2:   44:			choice=stoi(temp);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   45:		}
+    =====:   46:	  	catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:   47:		{
+    =====:   48:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:   49:			continue;
+        -:   50:		}
+        2:   51:		if(choice>0 && choice<4)     
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        -:   52:		{
+        1:   53:			if(choice==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:   54:			{
+    #####:   55:				if(validations::password_check())   //Calling password check to take password as input and validate it
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:   56:				{
+    #####:   57:					system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   58:					option[choice-1]();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   59:				}
+        -:   60:				else
+        -:   61:				{
+    #####:   62:					system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   63:					cout<<"\nYou have entered Wrong Password!!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   64:					continue;
+        -:   65:				}
+        -:   66:			}
+        -:   67:			else
+        1:   68:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69:				option[choice-1]();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   70:		}
+       1*:   71:		else if(choice==4)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:   72:		{
+        1:   73:			break;
+        -:   74:		}
+        -:   75:		else
+        -:   76:		{
+    #####:   77:			system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   78:			cout<<"\nInvalid choice!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   79:			continue;
+        -:   80:
+        -:   81:		}
+        -:   82:	}
+        1:   83:	supplier_list_to_file();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   84:	customer_list_to_file();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85:	product_list_to_file();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   86:	transaction_list_to_file();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   87:	cout<<endl<<"\nThank You!\nVisit us Again!!!"<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   88:	return EXIT_SUCCESS;
+        -:   89:}
+        -:   90:
+        -:   91:

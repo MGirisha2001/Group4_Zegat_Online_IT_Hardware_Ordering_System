@@ -1,0 +1,441 @@
+        -:    0:Source:func3.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include <string>      //Includes string functions
+        -:    3:#include <iomanip>
+        -:    4:#include <limits>
+        -:    5:#include "header.hpp"
+        -:    6:#include "validations.cpp"
+        -:    7:#include <fstream>
+        -:    8:fstream f1;
+        -:    9:fstream f2;
+        -:   10:
+        -:   11:
+        -:   12:/**********************************************************************************
+        -:   13:
+        -:   14:
+        -:   15:FUNCTIONNAME:customer_list_to_file()
+        -:   16:DESCRIPTION:This function  is used to store 
+        -:   17:
+        -:   18:*********************************************************************************/
+function _Z21customer_list_to_filev called 1 returned 100% blocks executed 25%
+        1:   19:int customer_list_to_file()
+        -:   20:{
+        1:   21:	if(cust.empty())
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        -:   22:	{
+        1:   23:		return EXIT_FAILURE;
+        -:   24:	}
+    #####:   25:	f1.open("Customer_file",ios::out | ios::binary);
+call    0 never executed
+call    1 never executed
+    #####:   26:	for(auto t:cust)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+call   11 never executed
+        -:   27:	{
+    #####:   28:		f1.write((char *)&t,sizeof(customer));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   29:	}
+    #####:   30:	f1.close();
+call    0 never executed
+    #####:   31:	return EXIT_FAILURE;
+        -:   32:}
+        -:   33:
+        -:   34:
+        -:   35:
+        -:   36:/**********************************************************************************
+        -:   37:
+        -:   38:
+        -:   39:FUNCTIONNAME:customer_file_to_list()
+        -:   40:DESCRIPTION:This function  is used to generate customer list from customer file 
+        -:   41:
+        -:   42:*********************************************************************************/
+function _Z21customer_file_to_listv called 1 returned 100% blocks executed 38%
+        1:   43:int customer_file_to_list()
+        -:   44:{
+        2:   45:	customer c;
+call    0 returned 1
+call    1 returned 1
+call    2 never executed
+        1:   46:	f2.open("Customer_file",ios::in | ios::binary);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   47:	if(!f2)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        -:   48:	{
+        1:   49:		return EXIT_FAILURE;
+        -:   50:	}
+        -:   51:	else
+        -:   52:	{
+    #####:   53:		int temp=sizeof(c);
+    #####:   54:		f2.read((char *)&c,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   55:		std::cout<<c.customer_name<<"  "<<c.customer_id<<endl<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####:   56:		while(!f2.eof())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:   57:		{
+    #####:   58:			cust.push_back(c);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   59:			f2.read((char *)&c,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   60:		}
+    #####:   61:		f2.close();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   62:		return EXIT_FAILURE;
+        -:   63:	}
+        -:   64:}
+        -:   65:
+        -:   66:
+        -:   67:
+        -:   68:/**********************************************************************************
+        -:   69:
+        -:   70:
+        -:   71:FUNCTIONNAME:product_list_to_file()
+        -:   72:DESCRIPTION:This function  is used to store product list in product file
+        -:   73:
+        -:   74:*********************************************************************************/
+function _Z20product_list_to_filev called 1 returned 100% blocks executed 93%
+        1:   75:int product_list_to_file()
+        -:   76:{
+        1:   77:	if(prod.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:   78:	{
+    #####:   79:		return EXIT_FAILURE;
+        -:   80:	}
+        1:   81:	f1.open("Product_file",ios::out | ios::binary);
+call    0 returned 1
+call    1 returned 1
+        2:   82:	for(list<product> :: iterator t=prod.begin();t!=prod.end();t++)
+call    0 returned 1
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+call    5 returned 1
+        -:   83:	{
+        1:   84:		f1.write((char *)&t,sizeof(product));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   85:	}
+        1:   86:	f1.close();
+call    0 returned 1
+        1:   87:	return EXIT_FAILURE;
+        -:   88:}
+        -:   89:
+        -:   90:
+        -:   91:
+        -:   92:/**********************************************************************************
+        -:   93:
+        -:   94:
+        -:   95:FUNCTIONNAME:product_file_to_list()
+        -:   96:DESCRIPTION:This function  is used to generate product list from product file
+        -:   97:
+        -:   98:*********************************************************************************/
+function _Z20product_file_to_listv called 1 returned 100% blocks executed 50%
+        1:   99:int product_file_to_list()
+        -:  100:{
+        2:  101:	product pr;
+call    0 returned 1
+call    1 returned 1
+call    2 never executed
+        1:  102:	f2.open("Product_file",ios::in | ios::binary);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  103:	if(!f2)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        -:  104:	{
+        1:  105:		return EXIT_FAILURE;
+        -:  106:	}
+        -:  107:	else
+        -:  108:	{
+    #####:  109:		int temp=sizeof(pr);
+    #####:  110:		f2.read((char *) &pr,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  111:		while(!f2.eof())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  112:		{
+    #####:  113:			prod.push_back(pr);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:			f2.read((char *) &pr,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  115:		}
+    #####:  116:		f2.close();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  117:		return EXIT_FAILURE;
+        -:  118:	}
+        -:  119:}
+        -:  120:
+        -:  121:
+        -:  122:
+        -:  123:/**********************************************************************************
+        -:  124:
+        -:  125:
+        -:  126:FUNCTIONNAME:transaction_list_to_file()
+        -:  127:DESCRIPTION:This function  is used to store transaction list in transaction file
+        -:  128:
+        -:  129:*********************************************************************************/
+function _Z24transaction_list_to_filev called 1 returned 100% blocks executed 83%
+        1:  130:int transaction_list_to_file()
+        -:  131:{
+        1:  132:	f1.open("Transaction_file",ios::out | ios::binary);
+call    0 returned 1
+call    1 returned 1
+       1*:  133:	for(list<transaction> :: iterator t=trans.begin();t!=trans.end();t++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+call    5 never executed
+        -:  134:	{
+    #####:  135:		f1.write((char *) &t,sizeof(transaction));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  136:	}
+        1:  137:	f1.close();
+call    0 returned 1
+        1:  138:	return EXIT_FAILURE;
+        -:  139:}
+        -:  140:
+        -:  141:
+        -:  142:
+        -:  143:
+        -:  144:/**********************************************************************************
+        -:  145:
+        -:  146:
+        -:  147:FUNCTIONNAME:transaction_file_to_list()
+        -:  148:DESCRIPTION:This function  is used to generate transaction list from transaction file
+        -:  149:
+        -:  150:*********************************************************************************/
+function _Z24transaction_file_to_listv called 1 returned 100% blocks executed 26%
+        1:  151:int transaction_file_to_list()
+        -:  152:{
+        1:  153:	if(trans.empty())
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        -:  154:	{
+        1:  155:		return EXIT_FAILURE;
+        -:  156:	}
+    #####:  157:	transaction tr;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  158:	f2.open("Transaction_file",ios::in | ios::binary);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  159:	if(!f2)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  160:	{
+    #####:  161:		return EXIT_FAILURE;
+        -:  162:	}
+        -:  163:	else
+        -:  164:	{
+    #####:  165:		int temp=sizeof(tr);
+    #####:  166:		f2.read((char *) &tr,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  167:		while(!f2.eof())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  168:		{
+    #####:  169:			trans.push_back(tr);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  170:			f2.read((char *) &tr,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  171:		}
+    #####:  172:		f2.close();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  173:		return EXIT_FAILURE;
+        -:  174:	}
+        -:  175:}
+        -:  176:
+        -:  177:
+        -:  178:/**********************************************************************************
+        -:  179:
+        -:  180:
+        -:  181:FUNCTIONNAME:supplier_list_to_file()
+        -:  182:DESCRIPTION:This function  is used to store supplier list in supplier file
+        -:  183:
+        -:  184:*********************************************************************************/
+function _Z21supplier_list_to_filev called 1 returned 100% blocks executed 93%
+        1:  185:int supplier_list_to_file()
+        -:  186:{
+        1:  187:	if(sup.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  188:	{
+    #####:  189:		return EXIT_FAILURE;
+        -:  190:	}
+        1:  191:	f1.open("Supplier_file",ios::out | ios::binary);
+call    0 returned 1
+call    1 returned 1
+        2:  192:	for(list<supplier> :: iterator t=sup.begin();t!=sup.end();t++)
+call    0 returned 1
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+call    5 returned 1
+        -:  193:	{
+        1:  194:		f1.write((char *) &t,sizeof(supplier));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  195:	}
+        1:  196:	f1.close();
+call    0 returned 1
+        1:  197:	return EXIT_FAILURE;
+        -:  198:}
+        -:  199:
+        -:  200:
+        -:  201:
+        -:  202:/**********************************************************************************
+        -:  203:
+        -:  204:
+        -:  205:FUNCTIONNAME:supplier_file_to_list()
+        -:  206:DESCRIPTION:This function  is used to generate supplier list from supplier file
+        -:  207:
+        -:  208:*********************************************************************************/
+function _Z21supplier_file_to_listv called 1 returned 100% blocks executed 50%
+        1:  209:int supplier_file_to_list()
+        -:  210:{
+        2:  211:	supplier su;
+call    0 returned 1
+call    1 returned 1
+call    2 never executed
+        1:  212:	f2.open("Supplier_file",ios::in | ios::binary);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  213:	if(!f2) 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        -:  214:	{
+        1:  215:		return EXIT_FAILURE;
+        -:  216:	}
+        -:  217:	else
+        -:  218:	{
+    #####:  219:		int temp=sizeof(su);
+    #####:  220:		f2.read((char *) &su,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  221:		while(!f2.eof())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  222:		{
+    #####:  223:			sup.push_back(su);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  224:			f2.read((char *) &su,temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  225:		}
+    #####:  226:		f2.close();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  227:		return EXIT_FAILURE;
+        -:  228:	}
+        -:  229:}

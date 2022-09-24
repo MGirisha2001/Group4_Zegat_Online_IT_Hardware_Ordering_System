@@ -1,0 +1,3837 @@
+        -:    0:Source:func1.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/**********************************************************************************
+        -:    2:
+        -:    3:
+        -:    4:FILENAME: func1.cpp
+        -:    5:DESCRIPTION:This file is used to display the main menu to the user.
+        -:    6:
+        -:    7:DATE            NAME              REASON
+        -:    8:------------------------------------------------------------------
+        -:    9:22/9/22        Group-4          This is done for creation of menu  	
+        -:   10:
+        -:   11: *********************************************************************************/
+        -:   12:#ifndef FUNC1
+        -:   13:#define FUNC1
+        -:   14:#include <iostream>
+        -:   15:#include <string>      //Includes string functions
+        -:   16:#include <iomanip>
+        -:   17:#include <limits>
+        -:   18:#include "header.hpp"
+        -:   19:#include "validations.cpp"
+        -:   20:#include <mutex>
+        -:   21:#include <thread>
+        -:   22:mutex accum_mutex;
+        -:   23:
+        -:   24:/**********************************************************************************
+        -:   25:
+        -:   26:
+        -:   27:FUNCTIONNAME: register_customer()
+        -:   28:DESCRIPTION:This function  is used to register customer.
+        -:   29:
+        -:   30: *********************************************************************************/
+function _ZN8customer17register_customerEv called 0 returned 0% blocks executed 0%
+    #####:   31:int customer::register_customer()
+        -:   32:{
+    #####:   33:	int id=0;
+    #####:   34:	if(cust.empty()) //Checting if customer list is empty.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   35:	{
+    #####:   36:		id=1000;
+        -:   37:	}
+    #####:   38:	for(customer c:cust) //Iterating through customer list.
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:   39:	{
+    #####:   40:		if(id<c.customer_id)
+branch  0 never executed
+branch  1 never executed
+        -:   41:		{
+    #####:   42:			id=c.customer_id;
+        -:   43:		}
+        -:   44:	}
+    #####:   45:	id+=1;
+    #####:   46:	customer c1;
+call    0 never executed
+call    1 never executed
+    #####:   47:	c1.customer_id=id;
+    #####:   48:	cout<<endl<<"Enter Details for Customer Registration"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:   49:	cout<<"-----------------------------------------------"<<endl;	
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   50:	while(1)
+        -:   51:	{
+    #####:   52:		cout<<"Enter Customer Name: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   53:		cin.ignore(1,'\n');
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   54:		getline(cin,temp); //Taking customer name as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   55:		if(validations::check_name(temp))
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:   56:		{
+    #####:   57:			cout<<"Name should be alphabets only and should be between 5-25 characters\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   58:			continue;
+        -:   59:		}
+    #####:   60:			c1.customer_name=temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   61:			break;
+        -:   62:	}
+        -:   63:	while(1)
+        -:   64:	{
+    #####:   65:		cout<<"Enter Customer address: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   66:		cin.ignore(0,'\n');
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   67:		getline(cin,temp);  //Taking customer address as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   68:		if(validations::check_address(temp)) 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:   69:		{
+    #####:   70:			cout<<"Address should not start with space and should be between 5-40 characters\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   71:			continue;
+        -:   72:		}
+    #####:   73:		c1.customer_address=temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   74:		break;
+        -:   75:	}
+        -:   76:	while(1)
+        -:   77:	{
+    #####:   78:		cout<<"Enter Customer Mobile number: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:		if(validations::check_digit(temp)) //Taking mobile number as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:   81:		{
+    #####:   82:			cout<<"Mobile number should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   83:			continue;
+        -:   84:		}
+    #####:   85:		else if(temp.length()!=10)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   86:		{
+    #####:   87:			cout<<"Mobile number should be 10 digits\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   88:			continue;
+        -:   89:		}
+        -:   90:		else
+        -:   91:		{
+    #####:   92:			c1.cmobile_no=stol(temp); 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   93:			break;
+        -:   94:		}
+        -:   95:	}
+    #####:   96:	cust.push_back(c1);  //Inserting customer details in customer list.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   97:	cout<<"\nCustomer Added Successfully!!!"<<"\nCustomer Id is "<<c1.customer_id<<endl<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####:   98:	return EXIT_SUCCESS;	
+call    0 never executed
+        -:   99:}
+        -:  100:
+        -:  101:/**********************************************************************************
+        -:  102:
+        -:  103:
+        -:  104:FUNCTIONNAME:edit_customer_details()
+        -:  105:DESCRIPTION:This function  is used to edit custome details.
+        -:  106:
+        -:  107: *********************************************************************************/
+function _ZN8customer21edit_customer_detailsEv called 0 returned 0% blocks executed 0%
+    #####:  108:int customer::edit_customer_details()
+        -:  109:{
+    #####:  110:	cout<<endl<<"Enter Details for Editing Customer"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  111:	cout<<"---------------------------------------"<<endl;	
+call    0 never executed
+call    1 never executed
+        -:  112:
+        -:  113:	while(1)
+        -:  114:	{
+    #####:  115:		cout<<"Enter Customer Name: ";
+call    0 never executed
+    #####:  116:		cin.ignore(1,'\n');
+call    0 never executed
+    #####:  117:		getline(cin,temp);
+call    0 never executed
+    #####:  118:		if(validations::check_name(temp)) //Taking customer name as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+        -:  119:		{
+    #####:  120:			cout<<"Name should be alphabets only and should be between 5-25 characters\n";
+call    0 never executed
+    #####:  121:			continue;
+        -:  122:		}
+    #####:  123:			this->customer_name=temp;
+call    0 never executed
+    #####:  124:			break;
+        -:  125:	}
+        -:  126:
+        -:  127:
+        -:  128:	while(1)
+        -:  129:	{
+    #####:  130:		cout<<"Enter Customer address: ";
+call    0 never executed
+    #####:  131:		cin.ignore(0,'\n');
+call    0 never executed
+    #####:  132:		getline(cin,temp);
+call    0 never executed
+    #####:  133:		if(validations::check_address(temp))  //Taking customer address as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+        -:  134:		{
+    #####:  135:			cout<<"Address should not start with space and should be between 5-40 characters\n";
+call    0 never executed
+    #####:  136:			continue;
+        -:  137:		}
+    #####:  138:		this->customer_address=temp;
+call    0 never executed
+    #####:  139:		break;
+        -:  140:	}
+        -:  141:	while(1)
+        -:  142:	{
+    #####:  143:		cout<<"Enter Customer Mobile number: ";
+call    0 never executed
+    #####:  144:		cin>>temp;
+call    0 never executed
+    #####:  145:		if(validations::check_digit(temp)) //Taking customer mobile number as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+        -:  146:		{
+    #####:  147:			cout<<"Mobile number should be digits only\n";
+call    0 never executed
+    #####:  148:			continue;
+        -:  149:		}
+    #####:  150:		else if(temp.length()!=10)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  151:		{
+    #####:  152:			cout<<"Mobile number should be 10 digits\n";
+call    0 never executed
+    #####:  153:			continue;
+        -:  154:		}
+        -:  155:		else
+        -:  156:		{
+    #####:  157:			this->cmobile_no=stol(temp);
+call    0 never executed
+    #####:  158:			break;
+        -:  159:		}
+        -:  160:	}	
+    #####:  161:	cout<<endl<<"Details editted Successfully!!!\n\n\n";
+call    0 never executed
+call    1 never executed
+    #####:  162:	return EXIT_SUCCESS;	
+        -:  163:}
+        -:  164:
+        -:  165:/**********************************************************************************
+        -:  166:
+        -:  167:
+        -:  168:FUNCTIONNAME: view_items()
+        -:  169:DESCRIPTION:This function  is used to display items to the customer.
+        -:  170:
+        -:  171: *********************************************************************************/
+function _ZN8customer10view_itemsEv called 0 returned 0% blocks executed 0%
+    #####:  172:int customer::view_items()
+        -:  173:{
+    #####:  174:	if(prod.empty()) //Checling if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  175:	{
+    #####:  176:		cout<<endl<<"Product List is Empty!!!"<<endl<<endl<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+    #####:  177:		return EXIT_FAILURE;
+        -:  178:	}
+    #####:  179:	int count=1;
+    #####:  180:	cout<<"\n                    Showing Product List"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  181:	cout<<endl<<"-----------------------------------------"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  182:	cout<<"Serial  Product_id   Name   Cost "<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  183:	for(list<product>::iterator it=prod.begin();it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  184:	{
+    #####:  185:		cout<<count++<<setw(14)<<it->get_product_id()<<"   "<<it->get_product_name()<<"  "<<it->get_cost()<<endl;  //Displaying product.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+call   33 never executed
+call   34 never executed
+call   35 never executed
+        -:  186:	}
+    #####:  187:	return EXIT_SUCCESS; 
+        -:  188:}
+        -:  189:
+        -:  190:/**********************************************************************************
+        -:  191:
+        -:  192:
+        -:  193:FUNCTIONNAME: place_order()
+        -:  194:DESCRIPTION:This function  is used by the customer  to place order.
+        -:  195:
+        -:  196: *********************************************************************************/
+function _ZN8customer11place_orderEv called 0 returned 0% blocks executed 0%
+    #####:  197:int customer::place_order()
+        -:  198:{
+        -:  199:
+    #####:  200:	if(prod.empty()) //Checking if product list is empty.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  201:	{
+    #####:  202:		cout<<endl<<"Product List is Empty order cannot be placed!!!"<<endl<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    #####:  203:		return EXIT_FAILURE;
+        -:  204:	}
+    #####:  205:	int count=0;
+    #####:  206:	int choice=1;
+    #####:  207:	int flag=0;
+        -:  208:	int prod_id;
+        -:  209:	int qty;
+        -:  210:	int prod_cost;
+    #####:  211:	string prod_name;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  212:	string products[3]={"Nil","Nil","Nil"};
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+    #####:  213:	int amount=0;
+    #####:  214:	while(choice!=0)
+branch  0 never executed
+branch  1 never executed
+        -:  215:	{
+    #####:  216:		if(count==3)
+branch  0 never executed
+branch  1 never executed
+        -:  217:		{
+    #####:  218:			cout<<"You cannot buy more than 3 products!!!"<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  219:			break;
+        -:  220:		}
+        -:  221:		while(1)
+        -:  222:		{
+    #####:  223:			cout<<"\nEnter Product Id to purchase: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  224:			cin>>temp; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  225:			if(validations::check_digit(temp)) //Taking product id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:  226:			{
+    #####:  227:				cout<<"Product Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  228:				continue;
+        -:  229:			}
+        -:  230:			else
+        -:  231:			{
+    #####:  232:				prod_id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  233:				break;
+        -:  234:			}
+        -:  235:		}
+    #####:  236:		for(list<product>::iterator it=prod.begin();it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+        -:  237:		{
+    #####:  238:			if(it->get_product_id()==prod_id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  239:			{
+        -:  240:				while(1)
+        -:  241:				{
+    #####:  242:					cout<<"Enter to Quantity: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  243:					cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  244:					if(validations::check_digit(temp)) //Taking quantity as input and validating it
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:  245:					{
+    #####:  246:						cout<<"Quantity should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  247:						continue;
+        -:  248:					}
+        -:  249:					else
+        -:  250:					{
+    #####:  251:						qty=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  252:						break;
+        -:  253:					}
+        -:  254:				}
+    #####:  255:				prod_name=it->get_product_name();		
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+call    5 never executed
+    #####:  256:				prod_cost=it->get_cost();		
+call    0 never executed
+call    1 never executed
+    #####:  257:				if((qty>it->get_no_of_units())||qty<0)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+        -:  258:				{
+    #####:  259:					cout<<"Sorry quantity insufficient!!!\nAvailable Quantity : "<<it->get_no_of_units()<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    #####:  260:					flag=1;
+    #####:  261:					break;
+        -:  262:				}
+    #####:  263:				accum_mutex.lock();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  264:				it->set_no_of_units(it->get_no_of_units()-qty);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  265:				it->set_units_sold(qty);
+call    0 never executed
+call    1 never executed
+    #####:  266:				products[count]=prod_name+", Quantity: "+to_string(qty);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+call   11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+    #####:  267:				amount=amount+(qty*prod_cost);
+    #####:  268:				accum_mutex.unlock();
+call    0 never executed
+    #####:  269:				count++;
+    #####:  270:				flag=1;
+    #####:  271:				break;
+        -:  272:			}
+        -:  273:		}
+    #####:  274:		if(flag==0)
+branch  0 never executed
+branch  1 never executed
+        -:  275:		{
+    #####:  276:			cout<<"Sorry Product with "<<prod_id<<" id not found!!!"<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  277:		}
+    #####:  278:		flag=0;
+        -:  279:		while(1)
+        -:  280:		{
+    #####:  281:			cout<<"Press 0 to Stop Shopping or any other to continue: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  282:			cin>>temp; //Taking user choice to continue shopping and validate it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  283:			if(validations::check_digit(temp))
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:  284:			{
+    #####:  285:				cout<<"Choice should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  286:				continue;
+        -:  287:			}
+        -:  288:			else
+        -:  289:			{
+    #####:  290:				choice=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  291:				break;
+        -:  292:			}
+        -:  293:		}
+        -:  294:	}
+    #####:  295:	if(count>0)
+branch  0 never executed
+branch  1 never executed
+        -:  296:	{
+    #####:  297:		transaction t;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  298:		t.generate_bill(products,this->customer_id,amount);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  299:		trans.push_back(t);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  300:	}
+    #####:  301:	cout<<endl<<endl<<"Thank You For Visiting Our Shop!!! "<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    #####:  302:	return EXIT_SUCCESS;
+        -:  303:}
+        -:  304:
+        -:  305:/**********************************************************************************
+        -:  306:
+        -:  307:
+        -:  308:FUNCTIONNAME: view_transaction_history()
+        -:  309:DESCRIPTION:This function  is used to view transaction history to the customer.
+        -:  310:
+        -:  311: *********************************************************************************/
+function _ZN8customer24view_transaction_historyEv called 0 returned 0% blocks executed 0%
+    #####:  312:int customer::view_transaction_history()
+        -:  313:{
+    #####:  314:	if(trans.empty()) //Checking if transaction history is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  315:	{
+    #####:  316:		cout<<endl<<"No Previous Transaction Available!!!"<<endl<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    #####:  317:		return EXIT_FAILURE;
+        -:  318:	}
+    #####:  319:	int count=0;
+    #####:  320:	int flag=0;
+    #####:  321:	list<transaction>::iterator it=trans.begin();
+call    0 never executed
+    #####:  322:	for(;it!=trans.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -:  323:	{
+    #####:  324:		if(it->get_cust_id()==this->customer_id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  325:		{
+    #####:  326:			if(count==0)
+branch  0 never executed
+branch  1 never executed
+        -:  327:			{
+    #####:  328:				cout<<"\n       Transaction History"<<endl; //Displaying transaction history of customer if available or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  329:				cout<<"------------------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  330:				cout<<"Id    Customer_ID    Product_1      Product_2     Prodcut_3     Total_amount    Discount     Amount_Paid"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  331:				count=1;
+        -:  332:			}	
+    #####:  333:			it->view_transaction();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  334:			flag=1;
+        -:  335:		}
+        -:  336:	}
+    #####:  337:	if(flag==0)
+branch  0 never executed
+branch  1 never executed
+        -:  338:	{
+    #####:  339:		cout<<endl<<"No Previous Transaction Available!!!"<<endl<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  340:	}
+        -:  341:	else
+        -:  342:	{
+    #####:  343:		cout<<endl<<"----------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  344:	}
+    #####:  345:	return EXIT_SUCCESS;
+        -:  346:}
+        -:  347:
+        -:  348:/**********************************************************************************
+        -:  349:
+        -:  350:
+        -:  351:FUNCTIONNAME: get_customer_id()
+        -:  352:DESCRIPTION:This function will return customer id.
+        -:  353:
+        -:  354: *********************************************************************************/
+function _ZN8customer15get_customer_idEv called 0 returned 0% blocks executed 0%
+    #####:  355:int customer::get_customer_id()
+        -:  356:{
+    #####:  357:	return this->customer_id;
+        -:  358:}
+        -:  359:
+        -:  360:
+        -:  361:/**********************************************************************************
+        -:  362:
+        -:  363:
+        -:  364:FUNCTIONNAME: get_customer_name()
+        -:  365:DESCRIPTION:This function  is used to get customer name.
+        -:  366:
+        -:  367: *********************************************************************************/
+function _ZN8customer17get_customer_nameB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  368:string customer::get_customer_name()
+        -:  369:{
+    #####:  370:	return this->customer_name;
+call    0 never executed
+        -:  371:}
+        -:  372:
+        -:  373:
+        -:  374:/**********************************************************************************
+        -:  375:
+        -:  376:
+        -:  377:FUNCTIONNAME: get_customer_address()
+        -:  378:DESCRIPTION:This function  is used to get customer address.
+        -:  379:
+        -:  380: *********************************************************************************/
+function _ZN8customer20get_customer_addressB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  381:string customer::get_customer_address()
+        -:  382:{
+    #####:  383:	return this->customer_address;
+call    0 never executed
+        -:  384:}
+        -:  385: 
+        -:  386:
+        -:  387:/**********************************************************************************
+        -:  388:
+        -:  389:
+        -:  390:FUNCTIONNAME: get_cmobile_no()
+        -:  391:DESCRIPTION:This function  is used to get mobile number of customer.
+        -:  392:
+        -:  393: *********************************************************************************/
+function _ZN8customer14get_cmobile_noEv called 0 returned 0% blocks executed 0%
+    #####:  394:long int customer::get_cmobile_no()
+        -:  395:{
+    #####:  396:	return this->cmobile_no;
+        -:  397:}
+        -:  398:
+        -:  399:/**********************************************************************************
+        -:  400:
+        -:  401:
+        -:  402:FUNCTIONNAME: view_customer()
+        -:  403:DESCRIPTION:This function  is used to display the details of the customer.
+        -:  404:
+        -:  405: *********************************************************************************/
+function _ZN8customer13view_customerEv called 0 returned 0% blocks executed 0%
+    #####:  406:int customer::view_customer()
+        -:  407:{
+    #####:  408:	cout<<endl<<"\n   Showing Details of Customer"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  409:	cout<<"---------------------------------------"<<endl;	
+call    0 never executed
+call    1 never executed
+    #####:  410:	cout<<"\tCustomer Id: "<<this->customer_id<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  411:	cout<<"\tCustomer Name: "<<this->customer_name<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  412:	cout<<"\tCustomer Address: "<<this->customer_address<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  413:	cout<<"\tCustomer Mobile: "<<this->cmobile_no<<endl<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  414:	return EXIT_SUCCESS;
+        -:  415:}
+        -:  416:
+        -:  417:
+        -:  418:/**********************************************************************************
+        -:  419:
+        -:  420:
+        -:  421:FUNCTIONNAME: get_cust_id()
+        -:  422:DESCRIPTION:This function is used to get customer id.
+        -:  423:
+        -:  424: *********************************************************************************/
+        -:  425:
+function _ZN11transaction11get_cust_idEv called 0 returned 0% blocks executed 0%
+    #####:  426:int transaction::get_cust_id()
+        -:  427:{
+    #####:  428:	return this->cust_id;
+        -:  429:}
+        -:  430:
+        -:  431:
+        -:  432:/**********************************************************************************
+        -:  433:
+        -:  434:
+        -:  435:FUNCTIONNAME: view_transaction()
+        -:  436:DESCRIPTION:This function  is used to display the transaction.
+        -:  437:
+        -:  438: *********************************************************************************/
+function _ZN11transaction16view_transactionEv called 0 returned 0% blocks executed 0%
+    #####:  439:int transaction::view_transaction()
+        -:  440:{ 
+    #####:  441:	cout<<this->transaction_id<<"     "<<this->cust_id<<"     "<<this->prod1<<"     "<<this->prod2<<"    "<<this->prod3<<"    "<<this->total_amount<<"     "<<this->discount<<"     "<<this->amount<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+call   11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    #####:  442:	return EXIT_SUCCESS;
+        -:  443:}
+        -:  444:
+        -:  445:/**********************************************************************************
+        -:  446:
+        -:  447:
+        -:  448:FUNCTIONNAME: generate_bill()
+        -:  449:DESCRIPTION:This function will generate bill and displayed to the customer.
+        -:  450:
+        -:  451: *********************************************************************************/
+function _ZN11transaction13generate_billEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEii called 0 returned 0% blocks executed 0%
+    #####:  452:int transaction::generate_bill(string products[],int customer_id,int amount)
+        -:  453:{
+        -:  454:
+    #####:  455:	int discount=0;
+    #####:  456:	int trans_id=0;
+    #####:  457:	if(trans.empty()) //Checking transaction if empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  458:	{
+    #####:  459:		trans_id=3000;
+        -:  460:	}
+    #####:  461:	for(transaction ts:trans) //Iterating through transaction list.
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  462:	{
+    #####:  463:		if(trans_id<ts.transaction_id)
+branch  0 never executed
+branch  1 never executed
+        -:  464:		{
+    #####:  465:			trans_id=ts.transaction_id;
+        -:  466:		}
+        -:  467:	}
+    #####:  468:	trans_id+=1;
+    #####:  469:	if(amount>20000) //Calculating discount.
+branch  0 never executed
+branch  1 never executed
+        -:  470:	{
+    #####:  471:		discount=(20*amount)/100;
+        -:  472:	}
+    #####:  473:	else if(amount>10000&&amount<20000)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  474:	{
+    #####:  475:		discount=(15*amount)/100;
+        -:  476:	}
+    #####:  477:	else if(amount>5000&&amount<10000)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  478:	{
+    #####:  479:		discount=(10*amount)/100;
+        -:  480:	}
+        -:  481:	else
+        -:  482:	{
+    #####:  483:		discount=(4*amount)/100;
+        -:  484:	}
+    #####:  485:	this->transaction_id=trans_id;
+    #####:  486:	this->cust_id=customer_id;
+    #####:  487:	this->prod1=products[0];
+call    0 never executed
+    #####:  488:	this->prod2=products[1];
+call    0 never executed
+    #####:  489:	this->prod3=products[2];
+call    0 never executed
+    #####:  490:	this->total_amount=amount;
+    #####:  491:	this->discount=discount;
+    #####:  492:	this->amount=amount-discount;
+    #####:  493:	cout<<endl<<"Showing Bill Details"<<endl; //Displaying bill to the user.
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  494:	cout<<"--------------------"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  495:	cout<<"\tTransaction_id: "<<trans_id<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  496:	cout<<"\tCustomer Id: "<<customer_id<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  497:	cout<<"\tProduct 1: "<<products[0]<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  498:	cout<<"\tProduct 2: "<<products[1]<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  499:	cout<<"\tProduct 3: "<<products[2]<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  500:	cout<<"\tTotal_amount: "<<amount<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  501:	cout<<"\tDiscount: "<<discount<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  502:	cout<<"\tAmount: "<<(amount-discount)<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  503:	return EXIT_SUCCESS;
+        -:  504:}
+        -:  505:
+        -:  506:
+        -:  507:
+        -:  508:
+        -:  509:/**********************************************************************************
+        -:  510:
+        -:  511:
+        -:  512:FUNCTIONNAME: register_supplier()
+        -:  513:DESCRIPTION:This function  is used to register supplier.
+        -:  514:
+        -:  515: *********************************************************************************/
+function _ZN8supplier17register_supplierEv called 1 returned 100% blocks executed 65%
+        1:  516:int supplier::register_supplier()
+        -:  517:{
+        1:  518:	int id=0;
+        1:  519:	if(sup.empty()) //Checking if supplier list is empty or not.
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        -:  520:	{
+        1:  521:		id=100;
+        -:  522:	}
+       1*:  523:	for(supplier s:sup) //Iterating to supplier list.
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  524:	{
+    #####:  525:		if(id<s.supplier_id)
+branch  0 never executed
+branch  1 never executed
+        -:  526:		{
+    #####:  527:			id=s.supplier_id;
+        -:  528:		}
+        -:  529:	}
+        1:  530:	id+=1;
+        1:  531:	supplier *s1=new supplier;
+call    0 returned 1
+call    1 returned 1
+        1:  532:	if(s1==NULL)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  533:	{
+    #####:  534:		cout<<"Memory Cannot be allocated !!!\n\n\n";
+call    0 never executed
+    #####:  535:		return EXIT_FAILURE;
+        -:  536:	}
+        1:  537:	s1->supplier_id=id;
+        1:  538:	cout<<endl<<"Enter Details for Supplier Registration"<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  539:	cout<<"---------------------------------------"<<endl;	
+call    0 returned 1
+call    1 returned 1
+        -:  540:	while(1)
+        -:  541:	{
+       1*:  542:		cout<<"Enter Supplier Name: ";
+call    0 returned 1
+        1:  543:		cin.ignore(1,'\n');
+call    0 returned 1
+        1:  544:		getline(cin,temp); 
+call    0 returned 1
+       1*:  545:		if(validations::check_name(temp)) //Taking supplier name as input and validating it.
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+call    7 never executed
+call    8 never executed
+        -:  546:		{
+    #####:  547:			cout<<"Name should be alphabets only and should be between 5-25 characters\n";
+call    0 never executed
+    #####:  548:			continue;
+        -:  549:		}
+        1:  550:			s1->supplier_name=temp;
+call    0 returned 1
+        1:  551:			break;
+        -:  552:	}
+        -:  553:
+        -:  554:
+        -:  555:	while(1)
+        -:  556:	{
+       1*:  557:		cout<<"Enter Supplier address: ";
+call    0 returned 1
+        1:  558:		cin.ignore(0,'\n');
+call    0 returned 1
+        1:  559:		getline(cin,temp); //Taking supplier address as input and validating it.
+call    0 returned 1
+       1*:  560:		if(validations::check_address(temp))
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+call    7 never executed
+call    8 never executed
+        -:  561:		{
+    #####:  562:			cout<<"Address should not start with space and should  be between 5-40 characters\n";
+call    0 never executed
+    #####:  563:			continue;
+        -:  564:		}
+        1:  565:		s1->supplier_address=temp;
+call    0 returned 1
+        1:  566:		break;
+        -:  567:	}
+        -:  568:	while(1)
+        -:  569:	{
+       1*:  570:		cout<<"Enter Supplier Mobile number: ";
+call    0 returned 1
+        1:  571:		cin>>temp;
+call    0 returned 1
+       1*:  572:		if(validations::check_digit(temp)) //Taking supplier mobile number as input and validating it.
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+call    7 never executed
+        -:  573:		{
+    #####:  574:			cout<<"Mobile number should be digits only\n";
+call    0 never executed
+    #####:  575:			continue;
+        -:  576:		}
+       1*:  577:		else if(temp.length()!=10)
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  578:		{
+    #####:  579:			cout<<"Mobile number should be 10 digits\n";
+call    0 never executed
+    #####:  580:			continue;
+        -:  581:		}
+        -:  582:		else
+        -:  583:		{
+        1:  584:			s1->mobile_no=stol(temp);
+call    0 returned 1
+        1:  585:			break;
+        -:  586:		}
+        -:  587:	}
+        1:  588:	sup.push_back(*s1); //Inserting supplier details into supplier list.
+call    0 returned 1
+        1:  589:	cout<<"\nSupplier Added Successfully!!!"<<"\nSupplier Id is "<<s1->supplier_id<<endl<<endl<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        1:  590:	return EXIT_SUCCESS;	
+        -:  591:}
+        -:  592:
+        -:  593:
+        -:  594:/**********************************************************************************
+        -:  595:
+        -:  596:
+        -:  597:FUNCTIONNAME: add_product()
+        -:  598:DESCRIPTION:This function  is used to add product.
+        -:  599:
+        -:  600: *********************************************************************************/
+        -:  601:
+function _ZN8supplier11add_productEv called 1 returned 100% blocks executed 62%
+        1:  602:int supplier::add_product()
+        -:  603:{
+        1:  604:	int id=0;
+        1:  605:	if(prod.empty()) //Checking if product list is empty or not
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        -:  606:	{
+        1:  607:		id=9000;
+        -:  608:	}
+       1*:  609:	for(product p:prod) //Iterating through the product list.
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  610:	{
+    #####:  611:		if(id<p.product_id)
+branch  0 never executed
+branch  1 never executed
+        -:  612:		{
+    #####:  613:			id=p.product_id;
+        -:  614:		}
+        -:  615:	}
+        1:  616:	if(sup.empty()) //Checking if supplier list is empty.
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  617:	{
+    #####:  618:		cout<<"\nNo Supplier so product cannot be supplied!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  619:		return EXIT_FAILURE;
+        -:  620:	}
+        1:  621:	id+=1;
+        1:  622:	product p1;
+call    0 returned 1
+call    1 never executed
+        1:  623:	p1.product_id=id;
+        1:  624:	cout<<endl<<"Enter Details of Product"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  625:	cout<<"---------------------------------------"<<endl;	
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  626:	while(1)
+        -:  627:	{
+       1*:  628:		cout<<"Enter Product Name: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  629:		cin>>temp; 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  630:		if(validations::check_string(temp)) //Taking product name as input and validating it.
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+        -:  631:		{
+    #####:  632:			cout<<"Name should be alphabets only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  633:			continue;
+        -:  634:		}
+       1*:  635:		else if(temp.length()<5||temp.length()>20)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+        -:  636:		{
+    #####:  637:			cout<<"\nName should be more than 5 and less than 20 character\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  638:			continue;
+        -:  639:		}
+        -:  640:		else
+        -:  641:		{
+        1:  642:			p1.product_name=temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  643:			break;
+        -:  644:		}
+        -:  645:	}
+        -:  646:	while(1)
+        -:  647:	{
+       1*:  648:		cout<<"Enter No of units: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  649:		cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  650:		if(validations::check_digit(temp)) //Taking unit as input and validating it.
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+        -:  651:		{
+    #####:  652:			cout<<"Units should be digits only!!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  653:			continue;
+        -:  654:		}
+        1:  655:		p1.no_of_units=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  656:		if(p1.no_of_units<10)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  657:		{
+    #####:  658:			cout<<"Units should not be less than 10\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  659:			continue;
+        -:  660:		}
+        1:  661:		break;
+        -:  662:	}
+        -:  663:	while(1)
+        -:  664:	{
+       1*:  665:		cout<<"Enter Cost of each item: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  666:		cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  667:		if(validations::check_digit(temp)) //Taking cost as input and validating it.
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+        -:  668:		{
+    #####:  669:			cout<<"Cost should be digit only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  670:			continue;
+        -:  671:		}
+        1:  672:		p1.cost=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  673:		if(p1.cost<500)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  674:		{		
+    #####:  675:			cout<<"Cost cannot be less than RS.500!!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  676:			continue;
+        -:  677:		}
+        -:  678:		else
+        -:  679:		{
+        1:  680:			break;
+        -:  681:		}
+        -:  682:	}
+        1:  683:	p1.sup_id=this->supplier_id;
+        1:  684:	p1.units_sold=0;
+        1:  685:	prod.push_back(p1); //Inserting product details into the product list.
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  686:	cout<<"\nProduct Added Successfully!!!"<<"\nProduct Id is "<<p1.product_id<<endl<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  687:	return EXIT_SUCCESS;
+call    0 returned 1
+        -:  688:}
+        -:  689:
+        -:  690:
+        -:  691:/**********************************************************************************
+        -:  692:
+        -:  693:
+        -:  694:FUNCTIONNAME: get_supplier_id()
+        -:  695:DESCRIPTION:This function  is used to get supplier id.
+        -:  696:
+        -:  697: *********************************************************************************/
+        -:  698:
+function _ZN8supplier15get_supplier_idEv called 1 returned 100% blocks executed 100%
+        1:  699:int supplier::get_supplier_id()
+        -:  700:{
+        1:  701:	return this->supplier_id;
+        -:  702:}
+        -:  703:
+        -:  704:
+function _ZN8supplier17get_supplier_nameB5cxx11Ev called 2 returned 100% blocks executed 100%
+        2:  705:string supplier::get_supplier_name()
+        -:  706:{
+        2:  707:	return this->supplier_name;
+call    0 returned 2
+        -:  708:}
+function _ZN8supplier20get_supplier_addressB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  709:string supplier::get_supplier_address()
+        -:  710:{
+    #####:  711:	return this->supplier_address;
+call    0 never executed
+        -:  712:}
+        -:  713:
+        -:  714:/**********************************************************************************
+        -:  715:
+        -:  716:
+        -:  717:FUNCTIONNAME: get_mobile_no()
+        -:  718:DESCRIPTION:This function  is used to get mobile number.
+        -:  719:
+        -:  720: *********************************************************************************/
+function _ZN8supplier13get_mobile_noEv called 0 returned 0% blocks executed 0%
+    #####:  721:long int supplier::get_mobile_no()
+        -:  722:{
+    #####:  723:	return this->mobile_no;
+        -:  724:}
+        -:  725:
+        -:  726:
+        -:  727:/**********************************************************************************
+        -:  728:
+        -:  729:
+        -:  730:FUNCTIONNAME: view_supplier()
+        -:  731:DESCRIPTION:This function  is used to view supplier details.
+        -:  732:
+        -:  733: *********************************************************************************/
+function _ZN8supplier13view_supplierEv called 0 returned 0% blocks executed 0%
+    #####:  734:int supplier::view_supplier()
+        -:  735:{
+    #####:  736:	cout<<endl<<"Showing  Details of Supplier"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  737:	cout<<"---------------------------------------"<<endl;	
+call    0 never executed
+call    1 never executed
+    #####:  738:	cout<<"\tSupplier Id: "<<supplier_id<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  739:	cout<<"\tSupplier Name: "<<supplier_name<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  740:	cout<<"\tSupplier Address: "<<supplier_address<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  741:	cout<<"\tSupplier Mobile: "<<mobile_no<<endl<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  742:	return EXIT_SUCCESS;
+        -:  743:}
+        -:  744:
+        -:  745:
+        -:  746:/**********************************************************************************
+        -:  747:
+        -:  748:
+        -:  749:FUNCTIONNAME: edit_supplier_details()
+        -:  750:DESCRIPTION:This function  is used to edit the supplier details.
+        -:  751:
+        -:  752: *********************************************************************************/
+        -:  753:
+function _ZN8supplier21edit_supplier_detailsEv called 0 returned 0% blocks executed 0%
+    #####:  754:int supplier::edit_supplier_details()
+        -:  755:{
+        -:  756:
+    #####:  757:	cout<<endl<<"Enter Details for Editing Supplier"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  758:	cout<<"---------------------------------------"<<endl;	
+call    0 never executed
+call    1 never executed
+        -:  759:
+        -:  760:	while(1)
+        -:  761:	{
+    #####:  762:		cout<<"Enter Supplier Name: ";
+call    0 never executed
+    #####:  763:		cin.ignore(1,'\n');
+call    0 never executed
+    #####:  764:		getline(cin,temp);
+call    0 never executed
+    #####:  765:		if(validations::check_name(temp)) //Taking supplier name as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+        -:  766:		{
+    #####:  767:			cout<<"Name should be alphabets only and should be between 5-25 characters\n";
+call    0 never executed
+    #####:  768:			continue;
+        -:  769:		}
+    #####:  770:			this->supplier_name=temp;
+call    0 never executed
+    #####:  771:			break;
+        -:  772:	}
+        -:  773:
+        -:  774:
+        -:  775:
+        -:  776:	while(1)
+        -:  777:	{
+    #####:  778:		cout<<"Enter Supplier address: ";
+call    0 never executed
+    #####:  779:		cin.ignore(0,'\n');
+call    0 never executed
+    #####:  780:		getline(cin,temp);
+call    0 never executed
+    #####:  781:		if(validations::check_address(temp))//Taking supplier address as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+        -:  782:		{
+    #####:  783:			cout<<"Address should not start with space and should  be between 5-40 characters\n";
+call    0 never executed
+    #####:  784:			continue;
+        -:  785:		}
+    #####:  786:		this->supplier_address=temp;
+call    0 never executed
+    #####:  787:		break;
+        -:  788:	}
+        -:  789:	while(1)
+        -:  790:	{
+    #####:  791:		cout<<"Enter Supplier Mobile number: ";
+call    0 never executed
+    #####:  792:		cin>>temp;
+call    0 never executed
+    #####:  793:		if(validations::check_digit(temp)) //Taking supplier mobile number as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+        -:  794:		{
+    #####:  795:			cout<<"Mobile number should be digits only\n";
+call    0 never executed
+    #####:  796:			continue;
+        -:  797:		}
+    #####:  798:		else if(temp.length()!=10)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  799:		{
+    #####:  800:			cout<<"Mobile number should be 10 digits\n";
+call    0 never executed
+    #####:  801:			continue;
+        -:  802:		}
+        -:  803:		else
+        -:  804:		{
+    #####:  805:			this->mobile_no=stol(temp);
+call    0 never executed
+    #####:  806:			break;
+        -:  807:		}
+        -:  808:	}
+    #####:  809:	cout<<endl<<"Details editted Successfully!!!\n\n\n";
+call    0 never executed
+call    1 never executed
+    #####:  810:	return EXIT_SUCCESS;
+        -:  811:}
+        -:  812:
+        -:  813:
+        -:  814:/**********************************************************************************
+        -:  815:
+        -:  816:
+        -:  817:FUNCTIONNAME: edit_product()
+        -:  818:DESCRIPTION:This function  is used to edit product..
+        -:  819:
+        -:  820: *********************************************************************************/
+function _ZN8supplier12edit_productEv called 0 returned 0% blocks executed 0%
+    #####:  821:int supplier::edit_product()
+        -:  822:{
+        -:  823:
+        -:  824:	int id;
+    #####:  825:	cout<<endl<<"Enter Details for Editing Product"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  826:	cout<<"---------------------------------------"<<endl;	
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  827:	while(1)
+        -:  828:	{
+    #####:  829:		cout<<"Enter the Product Id to edit: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  830:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  831:		if(validations::check_digit(temp)) //Taking product id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:  832:		{
+    #####:  833:			cout<<"Product Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  834:			continue;
+        -:  835:		}
+        -:  836:		else
+        -:  837:		{
+    #####:  838:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  839:			break;
+        -:  840:		}
+        -:  841:	}
+        -:  842:
+    #####:  843:	if(prod.empty()) //Checking if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  844:	{
+    #####:  845:		cout<<"\nProduct List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  846:		return EXIT_FAILURE;
+        -:  847:	}
+    #####:  848:	int flag=0;
+    #####:  849:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####:  850:	for(;it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -:  851:	{
+    #####:  852:		if(it->get_product_id()==id && it->get_sup_id())
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+        -:  853:		{
+    #####:  854:			it->edit_product_details(); //Calling edit product details function.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  855:			flag=1;
+    #####:  856:			break;
+        -:  857:		}
+        -:  858:	} 
+    #####:  859:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -:  860:	{
+    #####:  861:		cout<<"Product edited successfully!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  862:	}
+        -:  863:	else
+        -:  864:	{
+    #####:  865:		cout<<"Product with "<<id<<" does not exist or not supplied by you!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  866:	}
+    #####:  867:	return EXIT_SUCCESS;
+        -:  868:}
+        -:  869:
+        -:  870:
+        -:  871:/**********************************************************************************
+        -:  872:
+        -:  873:
+        -:  874:FUNCTIONNAME: products_supplied()
+        -:  875:DESCRIPTION:This function  is used to display the product supplied by the supplier.
+        -:  876:
+        -:  877: *********************************************************************************/
+        -:  878:
+function _ZN8supplier17products_suppliedEv called 0 returned 0% blocks executed 0%
+    #####:  879:int supplier::products_supplied()
+        -:  880:{
+    #####:  881:	if(prod.empty()) //Checking if products supplied is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  882:	{
+    #####:  883:		cout<<"Product list is empty\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  884:		return EXIT_FAILURE;
+        -:  885:	}
+    #####:  886:	int flag=0;
+    #####:  887:	int count=1;
+    #####:  888:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####:  889:	for(;it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -:  890:	{
+    #####:  891:		if(it->get_sup_id()==this->supplier_id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  892:		{
+    #####:  893:			flag=1;
+    #####:  894:			if(count==1)
+branch  0 never executed
+branch  1 never executed
+        -:  895:			{
+    #####:  896:				cout<<"		Products Supplied\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  897:				cout<<"--------------------------------\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  898:				cout<<"Id    Name    Units    Price    Supplied_by\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  899:				cout<<"--------------------------------\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  900:				count=0;
+        -:  901:			}
+    #####:  902:			it->view_product(); //Calling view product function.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  903:		}
+        -:  904:	}
+    #####:  905:	if(flag==0)
+branch  0 never executed
+branch  1 never executed
+        -:  906:	{
+    #####:  907:		cout<<endl<<"No products supplied by you!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  908:	}
+    #####:  909:	return EXIT_SUCCESS;
+        -:  910:}
+        -:  911:
+        -:  912:
+        -:  913:/**********************************************************************************
+        -:  914:
+        -:  915:
+        -:  916:FUNCTIONNAME: get_product_id()
+        -:  917:DESCRIPTION:This function  is used to get product id.
+        -:  918:
+        -:  919: *********************************************************************************/
+        -:  920:
+        -:  921:
+function _ZN7product14get_product_idEv called 0 returned 0% blocks executed 0%
+    #####:  922:int product::get_product_id()
+        -:  923:{
+    #####:  924:	return this->product_id;
+        -:  925:}
+        -:  926:
+        -:  927:
+        -:  928:/**********************************************************************************
+        -:  929:
+        -:  930:
+        -:  931:FUNCTIONNAME: get_product_name()
+        -:  932:DESCRIPTION:This function  is used to get product name..
+        -:  933:
+        -:  934: *********************************************************************************/
+function _ZN7product16get_product_nameB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  935:string product::get_product_name()
+        -:  936:{
+    #####:  937:	return this->product_name;
+call    0 never executed
+        -:  938:}
+        -:  939:
+        -:  940:/**********************************************************************************
+        -:  941:
+        -:  942:
+        -:  943:FUNCTIONNAME: get_no__of_units()
+        -:  944:DESCRIPTION:This function  is used to get number of units of products.
+        -:  945:
+        -:  946: *********************************************************************************/
+function _ZN7product15get_no_of_unitsEv called 0 returned 0% blocks executed 0%
+    #####:  947:int product::get_no_of_units()
+        -:  948:{
+    #####:  949:	return this->no_of_units;
+        -:  950:}
+        -:  951:
+        -:  952:
+        -:  953:/**********************************************************************************
+        -:  954:
+        -:  955:
+        -:  956:FUNCTIONNAME: get_cost()
+        -:  957:DESCRIPTION:This function  is used to get the cost of the product.
+        -:  958:
+        -:  959: *********************************************************************************/
+function _ZN7product8get_costEv called 0 returned 0% blocks executed 0%
+    #####:  960:int product::get_cost()
+        -:  961:{
+    #####:  962:	return this->cost;
+        -:  963:}
+        -:  964:
+        -:  965:/**********************************************************************************
+        -:  966:
+        -:  967:
+        -:  968:FUNCTIONNAME: get_units_sold()
+        -:  969:DESCRIPTION:This function  is used to get the units of product that has being sold
+        -:  970:
+        -:  971: *********************************************************************************/
+function _ZN7product14get_units_soldEv called 0 returned 0% blocks executed 0%
+    #####:  972:int product::get_units_sold()
+        -:  973:{
+    #####:  974:	return this->units_sold;
+        -:  975:}
+        -:  976:
+        -:  977:/**********************************************************************************
+        -:  978:
+        -:  979:
+        -:  980:FUNCTIONNAME: set_no_of_units()
+        -:  981:DESCRIPTION:This function  is used to set  the number of units.
+        -:  982:
+        -:  983: *********************************************************************************/
+function _ZN7product15set_no_of_unitsEi called 0 returned 0% blocks executed 0%
+    #####:  984:void product::set_no_of_units(int no_of_units)
+        -:  985:{
+    #####:  986:	this->no_of_units=no_of_units;
+    #####:  987:}
+        -:  988:
+        -:  989:/**********************************************************************************
+        -:  990:
+        -:  991:
+        -:  992:FUNCTIONNAME: set_units_sold()
+        -:  993:DESCRIPTION:This function  is used to set the units sold of the product. 
+        -:  994:
+        -:  995: *********************************************************************************/
+function _ZN7product14set_units_soldEi called 0 returned 0% blocks executed 0%
+    #####:  996:void product::set_units_sold(int units_sold)
+        -:  997:{
+    #####:  998:	this->units_sold+=units_sold;
+    #####:  999:}
+        -: 1000:
+        -: 1001:/**********************************************************************************
+        -: 1002:
+        -: 1003:
+        -: 1004:FUNCTIONNAME: view_product()
+        -: 1005:DESCRIPTION:This function  is used to display the products.
+        -: 1006:
+        -: 1007: *********************************************************************************/
+function _ZN7product12view_productEv called 0 returned 0% blocks executed 0%
+    #####: 1008:int product::view_product()
+        -: 1009:{  
+    #####: 1010:	cout<<this->product_id<<"    "<<this->product_name<<"    "<<this->no_of_units<<"    "<<this->cost<<"    "<<this->sup_id<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+    #####: 1011:	return EXIT_SUCCESS;
+        -: 1012:}
+        -: 1013:
+        -: 1014:
+        -: 1015:/**********************************************************************************
+        -: 1016:
+        -: 1017:
+        -: 1018:FUNCTIONNAME: get_sup_id()
+        -: 1019:DESCRIPTION:This function  is used to get the supplier id.
+        -: 1020:
+        -: 1021: *********************************************************************************/
+function _ZN7product10get_sup_idEv called 0 returned 0% blocks executed 0%
+    #####: 1022:int product::get_sup_id()
+        -: 1023:{
+    #####: 1024:	return this->sup_id;
+        -: 1025:}
+        -: 1026:
+        -: 1027:
+        -: 1028:/**********************************************************************************
+        -: 1029:
+        -: 1030:
+        -: 1031:FUNCTIONNAME: edit_product_details()
+        -: 1032:DESCRIPTION:This function  is used to edit the product details.
+        -: 1033:
+        -: 1034: *********************************************************************************/
+        -: 1035:
+        -: 1036:
+function _ZN7product20edit_product_detailsEv called 0 returned 0% blocks executed 0%
+    #####: 1037:int product::edit_product_details()
+        -: 1038:{
+        -: 1039:
+    #####: 1040:	cout<<endl<<"Enter Details for Editing Product"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####: 1041:	cout<<"---------------------------------------"<<endl;	
+call    0 never executed
+call    1 never executed
+        -: 1042:	while(1)
+        -: 1043:	{
+    #####: 1044:		cout<<"Enter Product Name: ";
+call    0 never executed
+    #####: 1045:		cin>>temp;
+call    0 never executed
+    #####: 1046:		if(validations::check_string(temp)) //Taking product name as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+        -: 1047:		{
+    #####: 1048:			cout<<"Name should be alphabets only\n";
+call    0 never executed
+    #####: 1049:			continue;
+        -: 1050:		}
+    #####: 1051:		else if(temp.length()<5||temp.length()>20)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+        -: 1052:		{
+    #####: 1053:			cout<<"\nName should be more than 5 and less than 20 character\n";
+call    0 never executed
+    #####: 1054:			continue;
+        -: 1055:		}
+        -: 1056:		else
+        -: 1057:		{
+    #####: 1058:			this->product_name=temp;
+call    0 never executed
+    #####: 1059:			break;
+        -: 1060:		}
+        -: 1061:	}
+        -: 1062:	while(1)
+        -: 1063:	{
+    #####: 1064:		cout<<"Enter Cost of each item: ";
+call    0 never executed
+    #####: 1065:		cin>>temp;
+call    0 never executed
+    #####: 1066:		if(validations::check_digit(temp)) //Taking cost as input and validating it.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+        -: 1067:		{
+    #####: 1068:			cout<<"Cost should be in digits only!!!\n";
+call    0 never executed
+    #####: 1069:			continue;
+        -: 1070:		}
+    #####: 1071:		this->cost=stoi(temp);
+call    0 never executed
+    #####: 1072:		if(cost<500)
+branch  0 never executed
+branch  1 never executed
+        -: 1073:		{		
+    #####: 1074:			cout<<"Cost cannot be less than RS.500!!!\n";
+call    0 never executed
+    #####: 1075:			continue;
+        -: 1076:		}
+        -: 1077:		else
+        -: 1078:		{
+    #####: 1079:			break;
+        -: 1080:		}
+        -: 1081:	}
+    #####: 1082:	return EXIT_SUCCESS;
+        -: 1083:}
+        -: 1084:
+        -: 1085:
+        -: 1086:/**********************************************************************************
+        -: 1087:
+        -: 1088:
+        -: 1089:FUNCTIONNAME: view_product_list()
+        -: 1090:DESCRIPTION:This function  is used to display the product list.
+        -: 1091:
+        -: 1092: *********************************************************************************/
+        -: 1093:
+function _ZN5Admin17view_product_listEv called 0 returned 0% blocks executed 0%
+    #####: 1094:int Admin::view_product_list()
+        -: 1095:{
+    #####: 1096:	if(prod.empty()) //Checking if product list is empty.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1097:	{
+    #####: 1098:		cout<<"\nProduct list is empty!!!\n\n\n";
+call    0 never executed
+    #####: 1099:		return EXIT_FAILURE;
+        -: 1100:	}
+    #####: 1101:	cout<<"\n-------Viewing Product List-----------------\n";
+call    0 never executed
+    #####: 1102:	cout<<"ID    Name   Units   Cost   Supplied_By\n";
+call    0 never executed
+    #####: 1103:	for(list<product>::iterator it=prod.begin();it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+        -: 1104:	{
+    #####: 1105:		it->view_product(); //Calling view product function.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1106:	}
+    #####: 1107:	return EXIT_SUCCESS;
+        -: 1108:}
+        -: 1109:
+        -: 1110:
+        -: 1111:/**********************************************************************************
+        -: 1112:
+        -: 1113:
+        -: 1114:FUNCTIONNAME: view_customer_list()
+        -: 1115:DESCRIPTION:This function  is used to display the customer list.
+        -: 1116:
+        -: 1117: *********************************************************************************/
+        -: 1118:
+function _ZN5Admin18view_customer_listEv called 0 returned 0% blocks executed 0%
+    #####: 1119:int Admin::view_customer_list()
+        -: 1120:{
+    #####: 1121:	if(cust.empty()) //Checking if customer list is empty
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1122:	{
+    #####: 1123:		cout<<"\nCustomer list is empty!!!\n\n\n";
+call    0 never executed
+    #####: 1124:		return EXIT_FAILURE;
+        -: 1125:	}
+    #####: 1126:	cout<<"\n-------Viewing Customer List-----------------\n";
+call    0 never executed
+    #####: 1127:	cout<<"ID    Name    Mobile     Address\n";
+call    0 never executed
+    #####: 1128:	for(list<customer>::iterator it=cust.begin();it!=cust.end();it++)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -: 1129:	{
+    #####: 1130:		cout<<it->get_customer_id()<<"   "<<it->get_customer_name()<<"  "<<it->get_cmobile_no()<<"  "<<it->get_customer_address()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+call   26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+call   36 never executed
+call   37 never executed
+call   38 never executed
+call   39 never executed
+call   40 never executed
+        -: 1131:	}
+    #####: 1132:	return EXIT_SUCCESS;
+        -: 1133:}
+        -: 1134:
+        -: 1135:
+        -: 1136:/**********************************************************************************
+        -: 1137:
+        -: 1138:
+        -: 1139:FUNCTIONNAME: view_transactions()
+        -: 1140:DESCRIPTION:This function  is used to display the transaction.
+        -: 1141:
+        -: 1142: *********************************************************************************/
+function _ZN5Admin17view_transactionsEv called 0 returned 0% blocks executed 0%
+    #####: 1143:int Admin::view_transactions()
+        -: 1144:{
+    #####: 1145:	if(trans.empty()) //Checking if transaction list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1146:	{
+    #####: 1147:		cout<<"\nNo Previous Transactions Available!!!\n\n\n";
+call    0 never executed
+    #####: 1148:		return EXIT_FAILURE;
+        -: 1149:	}
+    #####: 1150:	cout<<"\n-------Viewing Transactions-----------------\n";
+call    0 never executed
+    #####: 1151:	cout<<"Id    Custtomer_ID    Product_1     Product_2    Prodcut_3    Total_amount    Discount    Amount_Paid"<<endl;
+call    0 never executed
+call    1 never executed
+    #####: 1152:	for(list<transaction>::iterator it=trans.begin();it!=trans.end();it++)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+        -: 1153:	{
+    #####: 1154:		it->view_transaction(); //Calling view transaction function.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1155:	}
+    #####: 1156:	return EXIT_SUCCESS;
+        -: 1157:}
+        -: 1158:
+        -: 1159:
+        -: 1160:/**********************************************************************************
+        -: 1161:
+        -: 1162:
+        -: 1163:FUNCTIONNAME: view_supplier_list()
+        -: 1164:DESCRIPTION:This function  is used to display the supplier list.
+        -: 1165:
+        -: 1166: *********************************************************************************/
+function _ZN5Admin18view_supplier_listEv called 0 returned 0% blocks executed 0%
+    #####: 1167:int Admin::view_supplier_list()
+        -: 1168:{
+    #####: 1169:	if(sup.empty()) //Checking if supplier list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1170:	{
+    #####: 1171:		cout<<"\nSupplier list is empty!!!\n\n\n";
+call    0 never executed
+    #####: 1172:		return EXIT_FAILURE;
+        -: 1173:	}
+    #####: 1174:	cout<<"\n-------Viewing Supplier-----------------\n";
+call    0 never executed
+    #####: 1175:	cout<<"ID    Name    Mobile     Address\n";
+call    0 never executed
+    #####: 1176:	for(list<supplier>::iterator it=sup.begin();it!=sup.end();it++)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -: 1177:	{
+    #####: 1178:		cout<<it->get_supplier_id()<<"   "<<it->get_supplier_name()<<"  "<<it->get_mobile_no()<<"  "<<it->get_supplier_address()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+call   26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+call   36 never executed
+call   37 never executed
+call   38 never executed
+call   39 never executed
+call   40 never executed
+        -: 1179:	}
+    #####: 1180:	return EXIT_SUCCESS;
+        -: 1181:}
+        -: 1182:
+        -: 1183:/**********************************************************************************
+        -: 1184:
+        -: 1185:
+        -: 1186:FUNCTIONNAME: remove_supplier()
+        -: 1187:DESCRIPTION:This function  is used to remove the supplier.
+        -: 1188:
+        -: 1189: *********************************************************************************/
+        -: 1190:
+function _ZN5Admin15remove_supplierEv called 0 returned 0% blocks executed 0%
+    #####: 1191:int Admin::remove_supplier()
+        -: 1192:{
+        -: 1193:	int id; 
+    #####: 1194:	if(sup.empty()) //Checking if remove supplier list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1195:	{
+    #####: 1196:		cout<<"\nSupplier List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1197:		return EXIT_FAILURE;
+        -: 1198:	}
+        -: 1199:
+        -: 1200:	while(1)
+        -: 1201:	{
+    #####: 1202:		cout<<"Enter the Supplier Id to remove: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1203:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1204:		if(validations::check_digit(temp)) //Taking supplier id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1205:		{
+    #####: 1206:			cout<<"Supplier Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1207:			continue;
+        -: 1208:		}
+        -: 1209:		else
+        -: 1210:		{
+    #####: 1211:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1212:			break;
+        -: 1213:		}
+        -: 1214:	}
+        -: 1215:
+        -: 1216:
+    #####: 1217:	int flag=0;
+    #####: 1218:	std::list<supplier>::iterator it=sup.begin();
+call    0 never executed
+    #####: 1219:	for(;it!=sup.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1220:	{
+    #####: 1221:		if(it->get_supplier_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1222:		{
+    #####: 1223:			it=sup.erase(it); //If supplier id matches , then deleting it from supplier list.
+call    0 never executed
+call    1 never executed
+    #####: 1224:			flag=1;
+    #####: 1225:			break;
+        -: 1226:		} 
+        -: 1227:	}
+    #####: 1228:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -: 1229:	{
+    #####: 1230:		cout<<"\nSupplier removed successfully!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1231:	}
+        -: 1232:	else
+        -: 1233:	{
+    #####: 1234:		cout<<"\nSupplier with "<<id<<" does not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1235:	}
+    #####: 1236:	return EXIT_SUCCESS;
+        -: 1237:}
+        -: 1238:
+        -: 1239:
+        -: 1240:/**********************************************************************************
+        -: 1241:
+        -: 1242:
+        -: 1243:FUNCTIONNAME: remove_customer()
+        -: 1244:DESCRIPTION:This function  is used to remove the customer.
+        -: 1245:
+        -: 1246: *********************************************************************************/
+        -: 1247:
+function _ZN5Admin15remove_customerEv called 0 returned 0% blocks executed 0%
+    #####: 1248:int Admin::remove_customer()
+        -: 1249:{
+        -: 1250:
+        -: 1251:	int id;
+    #####: 1252:	if(cust.empty()) //Checking if customer list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1253:	{
+    #####: 1254:		cout<<"\nNo Customer Registered!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1255:		return EXIT_FAILURE;
+        -: 1256:	}
+        -: 1257:	while(1)
+        -: 1258:	{
+    #####: 1259:		cout<<"Enter the Customer Id to remove: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1260:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1261:		if(validations::check_digit(temp)) //Taking customer id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1262:		{
+    #####: 1263:			cout<<"Customer Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1264:			continue;
+        -: 1265:		}
+        -: 1266:		else
+        -: 1267:		{
+    #####: 1268:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1269:			break;
+        -: 1270:		}
+        -: 1271:	}
+        -: 1272:
+    #####: 1273:	int flag=0;
+    #####: 1274:	list<customer>::iterator it=cust.begin();
+call    0 never executed
+    #####: 1275:	for(;it!=cust.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1276:	{
+    #####: 1277:		if(it->get_customer_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1278:		{
+    #####: 1279:			it=cust.erase(it);
+call    0 never executed
+call    1 never executed
+    #####: 1280:			flag=1;
+    #####: 1281:			break;
+        -: 1282:		}
+        -: 1283:	} 
+    #####: 1284:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -: 1285:	{
+    #####: 1286:		cout<<"\nCustomer removed successfully!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1287:	}
+        -: 1288:	else
+        -: 1289:	{
+    #####: 1290:		cout<<"\nCustomer with "<<id<<" does not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1291:	}
+    #####: 1292:	return EXIT_SUCCESS;
+        -: 1293:
+        -: 1294:}
+        -: 1295:
+        -: 1296:/**********************************************************************************
+        -: 1297:
+        -: 1298:
+        -: 1299:FUNCTIONNAME: remove_product()
+        -: 1300:DESCRIPTION:This function  is used to remove product.
+        -: 1301:
+        -: 1302: *********************************************************************************/
+        -: 1303:
+function _ZN5Admin14remove_productEv called 0 returned 0% blocks executed 0%
+    #####: 1304:int Admin::remove_product()
+        -: 1305:{
+        -: 1306:
+        -: 1307:	int id;
+    #####: 1308:	if(prod.empty()) //checking remove product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1309:	{
+    #####: 1310:		cout<<"\nProduct List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1311:		return EXIT_FAILURE;
+        -: 1312:	}
+        -: 1313:	while(1)
+        -: 1314:	{
+    #####: 1315:		cout<<"Enter the Product Id to remove: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1316:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1317:		if(validations::check_digit(temp)) //Taking product id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1318:		{
+    #####: 1319:			cout<<"Product Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1320:			continue;
+        -: 1321:		}
+        -: 1322:		else
+        -: 1323:		{
+    #####: 1324:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1325:			break;
+        -: 1326:		}
+        -: 1327:	}
+    #####: 1328:	int flag=0;
+    #####: 1329:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####: 1330:	for(;it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1331:	{
+    #####: 1332:		if(it->get_product_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1333:		{
+    #####: 1334:			it=prod.erase(it);
+call    0 never executed
+call    1 never executed
+    #####: 1335:			flag=1;
+    #####: 1336:			break;
+        -: 1337:		}
+        -: 1338:	} 
+    #####: 1339:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -: 1340:	{
+    #####: 1341:		cout<<"\nProduct removed successfully!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1342:	}
+        -: 1343:	else
+        -: 1344:	{
+    #####: 1345:		cout<<"\nProduct with "<<id<<" does not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1346:	}
+    #####: 1347:	return EXIT_SUCCESS;
+        -: 1348:
+        -: 1349:}
+        -: 1350:
+        -: 1351:
+        -: 1352:/**********************************************************************************
+        -: 1353:
+        -: 1354:
+        -: 1355:FUNCTIONNAME: add_product()
+        -: 1356:DESCRIPTION:This function  is used to add product in the list.
+        -: 1357:
+        -: 1358: *********************************************************************************/
+function _ZN5Admin11add_productEv called 0 returned 0% blocks executed 0%
+    #####: 1359:int Admin::add_product()
+        -: 1360:{
+    #####: 1361:	int id=0;
+    #####: 1362:	if(prod.empty()) //Checking if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1363:	{
+    #####: 1364:		id=9000;
+        -: 1365:	}
+    #####: 1366:	for(product p:prod)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -: 1367:	{
+    #####: 1368:		if(id<p.product_id)
+branch  0 never executed
+branch  1 never executed
+        -: 1369:		{
+    #####: 1370:			id=p.product_id;
+        -: 1371:		}
+        -: 1372:	}
+    #####: 1373:	if(sup.empty()) //Checking if supplier list is empty or not. 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1374:	{
+    #####: 1375:		cout<<"\nNo Supplier present in the list, so product cannot be supplied!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1376:		return EXIT_FAILURE;
+        -: 1377:	}
+    #####: 1378:	id+=1;
+    #####: 1379:	product p1;
+call    0 never executed
+call    1 never executed
+    #####: 1380:	p1.product_id=id;
+        -: 1381:	while(1)
+        -: 1382:	{
+    #####: 1383:		cout<<"Enter Product Name: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1384:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1385:		if(validations::check_string(temp)) //Taking product name as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1386:		{
+    #####: 1387:			cout<<"Name should be alphabets only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1388:			continue;
+        -: 1389:		}
+    #####: 1390:		else if(temp.length()<5||temp.length()>20)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+        -: 1391:		{
+    #####: 1392:			cout<<"Name should be more than 5 and less than 20 character\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1393:			continue;
+        -: 1394:		}
+        -: 1395:		else
+        -: 1396:		{
+    #####: 1397:			p1.product_name=temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1398:			break;
+        -: 1399:		}
+        -: 1400:	}
+        -: 1401:
+        -: 1402:	while(1)
+        -: 1403:	{
+    #####: 1404:		cout<<"Enter No of units: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1405:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1406:		if(validations::check_digit(temp)) //Taking units as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1407:		{
+    #####: 1408:			cout<<"Units should not be less than 10\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1409:			continue;
+        -: 1410:		}
+    #####: 1411:		p1.no_of_units=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1412:		if(p1.no_of_units<10)
+branch  0 never executed
+branch  1 never executed
+        -: 1413:		{
+    #####: 1414:			cout<<"Units should not be less than 10\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1415:			continue;
+        -: 1416:		}
+    #####: 1417:		break;
+        -: 1418:	}
+        -: 1419:	while(1)
+        -: 1420:	{
+    #####: 1421:		cout<<"Enter Cost of each item: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1422:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1423:		if(validations::check_digit(temp)) //Taking cost as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1424:		{
+    #####: 1425:			cout<<"Units should not be less than 10\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1426:			continue;
+        -: 1427:		}
+    #####: 1428:		p1.cost=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1429:		if(p1.cost<500)
+branch  0 never executed
+branch  1 never executed
+        -: 1430:		{		
+    #####: 1431:			cout<<"Cost cannot be less than RS.500!!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1432:			continue;
+        -: 1433:		}
+        -: 1434:		else
+        -: 1435:		{
+    #####: 1436:			break;
+        -: 1437:		}
+        -: 1438:	}
+        -: 1439:
+    #####: 1440:	int max=0;
+    #####: 1441:	for(supplier s:sup) //Iterating through the supplier list.
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -: 1442:	{
+    #####: 1443:		if(max<s.get_supplier_id())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1444:		{
+    #####: 1445:			max=s.get_supplier_id();
+call    0 never executed
+        -: 1446:		}
+        -: 1447:	}
+    #####: 1448:	int min=max;
+    #####: 1449:	for(supplier s:sup) //Iterating through the supplier list.
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -: 1450:	{
+    #####: 1451:		if(min>s.get_supplier_id())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1452:		{
+    #####: 1453:			min=s.get_supplier_id();
+call    0 never executed
+        -: 1454:		}
+        -: 1455:	}
+        -: 1456:	while(1)
+        -: 1457:	{
+    #####: 1458:		cout<<"Enter Supplier Id: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1459:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1460:		if(validations::check_digit(temp)) //Taking supplier id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1461:		{
+    #####: 1462:			cout<<"Supplier should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1463:			continue;
+        -: 1464:		}
+    #####: 1465:		p1.sup_id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1466:		if( (p1.sup_id<min) || (p1.sup_id>max))
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1467:		{		
+    #####: 1468:			cout<<"Supplier Id should be between "<<min<<"-"<<max<<" !!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    #####: 1469:			continue;
+        -: 1470:		}
+        -: 1471:		else
+        -: 1472:		{
+        -: 1473:			break;
+        -: 1474:
+        -: 1475:		}
+        -: 1476:	}
+    #####: 1477:	p1.units_sold=0;
+    #####: 1478:	prod.push_back(p1); //Inserting product details into product list.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1479:	cout<<"\nProduct Added Successfully!!!"<<"\nProduct Id is "<<p1.product_id<<endl<<endl<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####: 1480:	return EXIT_SUCCESS;
+call    0 never executed
+        -: 1481:
+        -: 1482:}
+        -: 1483:
+        -: 1484:
+        -: 1485:/**********************************************************************************
+        -: 1486:
+        -: 1487:
+        -: 1488:FUNCTIONNAME: edit_supplier()
+        -: 1489:DESCRIPTION:This function  is used to edit the supplier details
+        -: 1490:
+        -: 1491: *********************************************************************************/
+        -: 1492:
+        -: 1493:
+        -: 1494:
+function _ZN5Admin13edit_supplierEv called 0 returned 0% blocks executed 0%
+    #####: 1495:int Admin::edit_supplier()
+        -: 1496:{
+        -: 1497:
+        -: 1498:	int id;
+    #####: 1499:	if(sup.empty()) //Checking if supplier list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1500:	{
+    #####: 1501:		cout<<"\nSupplier List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1502:		return EXIT_FAILURE;
+        -: 1503:	}
+        -: 1504:	while(1)
+        -: 1505:	{
+    #####: 1506:		cout<<"Enter the Supplier Id to edit: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1507:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1508:		if(validations::check_digit(temp)) //Taking supplier id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1509:		{
+    #####: 1510:			cout<<"Supplier Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1511:			continue;
+        -: 1512:		}
+        -: 1513:		else
+        -: 1514:		{
+    #####: 1515:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1516:			break;
+        -: 1517:		}
+        -: 1518:	}
+    #####: 1519:	int flag=0;
+    #####: 1520:	list<supplier>::iterator it=sup.begin();
+call    0 never executed
+    #####: 1521:	for(;it!=sup.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1522:	{
+    #####: 1523:		if(it->get_supplier_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1524:		{
+    #####: 1525:			it->view_supplier(); //Calling view supplier 
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####: 1526:			it->edit_supplier_details();//Calling edit supplier details.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####: 1527:			flag=1;
+    #####: 1528:			break;
+        -: 1529:		}
+        -: 1530:	} 
+    #####: 1531:	if(flag==0)
+branch  0 never executed
+branch  1 never executed
+        -: 1532:	{
+    #####: 1533:		cout<<"Supplier with "<<id<<" does not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1534:	}
+    #####: 1535:	return EXIT_SUCCESS;
+        -: 1536:
+        -: 1537:}
+        -: 1538:
+        -: 1539:/**********************************************************************************
+        -: 1540:
+        -: 1541:
+        -: 1542:FUNCTIONNAME: edit_customer()
+        -: 1543:DESCRIPTION:This function  is used to edit the details of the customer.
+        -: 1544:
+        -: 1545: *********************************************************************************/
+        -: 1546:
+function _ZN5Admin13edit_customerEv called 0 returned 0% blocks executed 0%
+    #####: 1547:int Admin::edit_customer()
+        -: 1548:{
+        -: 1549:
+        -: 1550:	int id;
+    #####: 1551:	if(cust.empty()) //Checking if customer list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1552:	{
+    #####: 1553:		cout<<"\nCustomer List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1554:		return EXIT_FAILURE;
+        -: 1555:	}
+        -: 1556:	while(1)
+        -: 1557:	{
+    #####: 1558:		cout<<"Enter the Customer Id to edit: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1559:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1560:		if(validations::check_digit(temp)) //Taking customer id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1561:		{
+    #####: 1562:			cout<<"Customer Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1563:			continue;
+        -: 1564:		}
+        -: 1565:		else
+        -: 1566:		{
+    #####: 1567:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1568:			break;
+        -: 1569:		}
+        -: 1570:	}
+    #####: 1571:	int flag=0;
+    #####: 1572:	list<customer>::iterator it=cust.begin();
+call    0 never executed
+    #####: 1573:	for(;it!=cust.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1574:	{
+    #####: 1575:		if(it->get_customer_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1576:		{
+    #####: 1577:			it->view_customer();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####: 1578:			it->edit_customer_details();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####: 1579:			flag=1;
+    #####: 1580:			break;
+        -: 1581:		}
+        -: 1582:	} 
+    #####: 1583:	if(flag==0)
+branch  0 never executed
+branch  1 never executed
+        -: 1584:	{
+    #####: 1585:		cout<<"Customer with "<<id<<" does not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1586:	}
+    #####: 1587:	return EXIT_SUCCESS;
+        -: 1588:}
+        -: 1589:
+        -: 1590:
+        -: 1591:/**********************************************************************************
+        -: 1592:
+        -: 1593:
+        -: 1594:FUNCTIONNAME: edit_product()
+        -: 1595:DESCRIPTION:This function  is used to edit the details of the product.
+        -: 1596:
+        -: 1597: *********************************************************************************/
+function _ZN5Admin12edit_productEv called 0 returned 0% blocks executed 0%
+    #####: 1598:int Admin::edit_product()
+        -: 1599:{
+        -: 1600:
+        -: 1601:	int id;
+    #####: 1602:	if(prod.empty()) //Checking if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1603:	{
+    #####: 1604:		cout<<"\nProduct List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1605:		return EXIT_FAILURE;
+        -: 1606:	}
+        -: 1607:	while(1)
+        -: 1608:	{
+    #####: 1609:		cout<<"Enter the Product Id to edit: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1610:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1611:		if(validations::check_digit(temp)) //Taking product id as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1612:		{
+    #####: 1613:			cout<<"Product Id should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1614:			continue;
+        -: 1615:		}
+        -: 1616:		else
+        -: 1617:		{
+    #####: 1618:			id=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1619:			break;
+        -: 1620:		}
+        -: 1621:	}
+    #####: 1622:	int flag=0;
+    #####: 1623:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####: 1624:	for(;it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1625:	{
+    #####: 1626:		if(it->get_product_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1627:		{
+    #####: 1628:			it->edit_product_details();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####: 1629:			flag=1;
+    #####: 1630:			break;
+        -: 1631:		}
+        -: 1632:	} 
+    #####: 1633:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -: 1634:	{
+    #####: 1635:		cout<<"Product edited successfully!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1636:	}
+        -: 1637:	else
+        -: 1638:	{
+    #####: 1639:		cout<<"Product with "<<id<<" does not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1640:	}
+    #####: 1641:	return EXIT_SUCCESS;
+        -: 1642:}
+        -: 1643:
+        -: 1644:
+        -: 1645:/**********************************************************************************
+        -: 1646:
+        -: 1647:
+        -: 1648:FUNCTIONNAME: order_stock()
+        -: 1649:DESCRIPTION:This function  is used to order the stock of the product.
+        -: 1650:
+        -: 1651: *********************************************************************************/
+        -: 1652:
+function _ZN5Admin11order_stockEv called 0 returned 0% blocks executed 0%
+    #####: 1653:int Admin::order_stock()
+        -: 1654:{
+    #####: 1655:	if(prod.empty()) //Checking if product list is empty or  not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1656:	{
+    #####: 1657:		cout<<"\nProduct List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1658:		return EXIT_FAILURE;
+        -: 1659:	}
+    #####: 1660:	int flag=0;
+    #####: 1661:	int count=0;
+    #####: 1662:	int no_of_units=0;
+    #####: 1663:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####: 1664:	for(;it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -: 1665:	{
+    #####: 1666:		if(it->get_no_of_units()==0)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1667:		{
+        -: 1668:			while(1)
+        -: 1669:			{
+    #####: 1670:				cout<<"\nEnter no of units for Product Id: "<<it->get_product_id()<<", Name: "<<it->get_product_name()<<": ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+    #####: 1671:				cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1672:				if(validations::check_digit(temp)) //Taking number of units as input and validating it.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -: 1673:				{
+    #####: 1674:					cout<<"No of Units should be digits only\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1675:					continue;
+        -: 1676:				}
+        -: 1677:				else
+        -: 1678:				{
+    #####: 1679:					no_of_units=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1680:					break;
+        -: 1681:				}
+        -: 1682:			}
+    #####: 1683:			it->set_no_of_units(no_of_units);
+call    0 never executed
+call    1 never executed
+    #####: 1684:			flag=1;
+        -: 1685:		}
+        -: 1686:	} 
+    #####: 1687:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -: 1688:	{
+    #####: 1689:		cout<<endl<<count<<" Product Stocked Successfully!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -: 1690:	}
+        -: 1691:	else
+        -: 1692:	{
+    #####: 1693:		cout<<"All Products are in stock already!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1694:	}
+    #####: 1695:	return EXIT_SUCCESS;
+        -: 1696:
+        -: 1697:}
+        -: 1698:
+        -: 1699:
+        -: 1700:/**********************************************************************************
+        -: 1701:
+        -: 1702:
+        -: 1703:FUNCTIONNAME: stock_report()
+        -: 1704:DESCRIPTION:This function  is used to display the stock report.
+        -: 1705:
+        -: 1706: *********************************************************************************/
+function _ZN5Admin12stock_reportEv called 0 returned 0% blocks executed 0%
+    #####: 1707:int Admin::stock_report()
+        -: 1708:{
+    #####: 1709:	if(prod.empty()) //Checking if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1710:	{
+    #####: 1711:		cout<<"\nProduct List not exist!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1712:		return EXIT_FAILURE;
+        -: 1713:	}
+    #####: 1714:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####: 1715:	cout<<"---------------------------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1716:	cout<<"Product_Id     Name     Units_Available    Units_Sold    Price"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1717:	cout<<"---------------------------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1718:	for(;it!=prod.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1719:	{
+    #####: 1720:		cout<<it->get_product_id()<<"    "<<it->get_product_name()<<"    "<<it->get_no_of_units()<<"    "<<it->get_units_sold()<<"    "<<it->get_cost()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+call   31 never executed
+branch 32 never executed
+branch 33 never executed
+call   34 never executed
+call   35 never executed
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+call   42 never executed
+call   43 never executed
+call   44 never executed
+        -: 1721:	} 
+    #####: 1722:	cout<<"---------------------------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1723:	return EXIT_SUCCESS;
+        -: 1724:}
+        -: 1725:
+        -: 1726:
+        -: 1727:/**********************************************************************************
+        -: 1728:
+        -: 1729:
+        -: 1730:FUNCTIONNAME: top_3_product()
+        -: 1731:DESCRIPTION:This function  is used to display the top 3 products.
+        -: 1732:
+        -: 1733: *********************************************************************************/
+function _ZN5Admin17top_three_productEv called 0 returned 0% blocks executed 0%
+    #####: 1734:int Admin::top_three_product()
+        -: 1735:{
+    #####: 1736:	if(prod.empty()) //Checking if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1737:	{
+    #####: 1738:		cout<<"\nNo Product Sold till now!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1739:		return EXIT_FAILURE;
+        -: 1740:	}
+    #####: 1741:	if(trans.empty()) //Checking if product list is empty or not.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1742:	{
+    #####: 1743:		cout<<"\nNo Product Sold till now!!!\n\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1744:		return EXIT_FAILURE;
+        -: 1745:	}
+    #####: 1746:	int flag=0;
+    #####: 1747:	int count=0;
+    #####: 1748:	list<product>::iterator it=prod.begin();
+call    0 never executed
+    #####: 1749:	cout<<"----------------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1750:	cout<<"Product_Id    Name   Units_Sold   Price"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1751:	cout<<"----------------------------------------------"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN5Admin17top_three_productEvENKUlR7productS1_E_clES1_S1_ called 0 returned 0% blocks executed 0%
+    #####: 1752:	prod.sort([](product &p1 ,product &p2){ return p1.units_sold>p2.units_sold;});	
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1753:	for(int i=0;i!=3&&it!=prod.end();i++,it++)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+        -: 1754:	{
+    #####: 1755:		if(it->get_units_sold()>0)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1756:		{
+    #####: 1757:			cout<<it->get_product_id()<<" "<<it->get_product_name()<<"  "<<it->get_units_sold()<<"   "<<it->get_cost()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+call   31 never executed
+branch 32 never executed
+branch 33 never executed
+call   34 never executed
+call   35 never executed
+        -: 1758:		}
+        -: 1759:	}
+function _ZZN5Admin17top_three_productEvENKUlR7productS1_E0_clES1_S1_ called 0 returned 0% blocks executed 0%
+    #####: 1760:	prod.sort([](product &p1 ,product &p2){ return p1.product_id<p2.product_id;});	
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1761:	return EXIT_SUCCESS;
+        -: 1762:
+        -: 1763:}
+        -: 1764:#endif

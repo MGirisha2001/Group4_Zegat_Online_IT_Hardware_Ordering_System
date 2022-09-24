@@ -1,0 +1,1055 @@
+        -:    0:Source:menu.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/**********************************************************************************
+        -:    2:
+        -:    3:
+        -:    4:FILENAME: menu.cpp
+        -:    5:DESCRIPTION:This file is used to display the main menu to the user.
+        -:    6:
+        -:    7:DATE            NAME              REASON
+        -:    8:------------------------------------------------------------------
+        -:    9:21/9/22        Group-4          This is done for creation of menu  	
+        -:   10:
+        -:   11: *********************************************************************************/
+        -:   12:
+        -:   13:#include <iostream>       //Including required Header files
+        -:   14:#include <string>        //Includes string functions
+        -:   15:#include <iomanip>
+        -:   16:#include "header.hpp"
+        -:   17:#include "validations.cpp"
+        -:   18:#include <mutex>
+        -:   19:#include <thread>
+        -:   20:using namespace std;
+        -:   21:
+        -:   22:
+        -:   23:/**********************************************************************************
+        -:   24:
+        -:   25:FUNCTIONNAME: maintain_product()
+        -:   26:DESCRIPTION:This function is used to maintain products by admin like add,edit,
+        -:   27:delete and view products.
+        -:   28:
+        -:   29: *********************************************************************************/
+function _ZN5Admin16maintain_productEv called 0 returned 0% blocks executed 0%
+    #####:   30:int Admin::maintain_product()
+        -:   31:{
+        -:   32:	int choice;
+    #####:   33:	while(choice!=5)
+branch  0 never executed
+branch  1 never executed
+        -:   34:	{         // Display maintain product menu.
+    #####:   35:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:   36:		cout<<"               Maintain Product ";
+call    0 never executed
+    #####:   37:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:   38:		cout<<"\n\t1.Add Product\n\t2.Edit Product\n\t3.Remove Product\n\t4.View List of Product\n\t5.Exit";
+call    0 never executed
+    #####:   39:		cout<<endl<<"\n\nEnter your choice: \n";
+call    0 never executed
+call    1 never executed
+    #####:   40:		cin>>temp;
+call    0 never executed
+        -:   41:		try 
+        -:   42:		{
+    #####:   43:			choice=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   44:		}
+    =====:   45:		catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:   46:		{
+    =====:   47:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:   48:			continue;
+        -:   49:		}
+    #####:   50:		switch(choice)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   51:		{
+    #####:   52:			case 1: system("clear");
+call    0 never executed
+    #####:   53:				ad.add_product();   //Calling add product function of admin.
+call    0 never executed
+    #####:   54:				break;
+    #####:   55:			case 2: system("clear");
+call    0 never executed
+    #####:   56:				ad.edit_product();   //Calling edit product function  of admin.
+call    0 never executed
+    #####:   57:				break;
+    #####:   58:			case 3: system("clear");
+call    0 never executed
+    #####:   59:				ad.remove_product();   //Calling remove product function  of admin.
+call    0 never executed
+    #####:   60:				break;
+    #####:   61:			case 4: system("clear");
+call    0 never executed
+    #####:   62:				ad.view_product_list();   //Calling view product function  of admin.
+call    0 never executed
+    #####:   63:				break;
+    #####:   64:			case 5:
+    #####:   65:				system("clear");
+call    0 never executed
+    #####:   66:				break;
+    #####:   67:			default:
+    #####:   68:				cout<<"\nInvalid choice!!!\n\n";
+call    0 never executed
+        -:   69:
+        -:   70:		}
+        -:   71:	}
+    #####:   72:	return EXIT_SUCCESS;
+        -:   73:}
+        -:   74:
+        -:   75:
+        -:   76:
+        -:   77:/**********************************************************************************
+        -:   78:
+        -:   79:FUNCTIONNAME: maintain_supplier()
+        -:   80:DESCRIPTION:This function is used to maintain supplier by admin like add,edit,
+        -:   81:delete and view supplier.
+        -:   82:
+        -:   83: *********************************************************************************/
+        -:   84:
+function _ZN5Admin17maintain_supplierEv called 0 returned 0% blocks executed 0%
+    #####:   85:int Admin::maintain_supplier()
+        -:   86:{
+        -:   87:	int choice;
+    #####:   88:	while(choice!=4)
+branch  0 never executed
+branch  1 never executed
+        -:   89:	{        // Display maintain supplier menu
+    #####:   90:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:   91:		cout<<"               Maintain Supplier ";
+call    0 never executed
+    #####:   92:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:   93:		cout<<"\n\t1.Edit Supplier\n\t2.Remove Supplier\n\t3.View Supplier List\n\t4.Exit"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:   94:		cout<<endl<<"\nEnter your choice: \n";
+call    0 never executed
+call    1 never executed
+    #####:   95:		cin>>temp;
+call    0 never executed
+        -:   96:		try 
+        -:   97:		{
+    #####:   98:			choice=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   99:		}
+    =====:  100:		catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:  101:		{
+    =====:  102:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  103:			continue;
+        -:  104:		}
+    #####:  105:		switch(choice)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  106:		{
+    #####:  107:			case 1: system("clear");
+call    0 never executed
+    #####:  108:				ad.edit_supplier();   //Calling edit supplier function  of admin.
+call    0 never executed
+    #####:  109:				break;
+    #####:  110:			case 2: system("clear");
+call    0 never executed
+    #####:  111:				ad.remove_supplier();  //Calling remove supplier function  of  admin.
+call    0 never executed
+    #####:  112:				break;
+    #####:  113:			case 3: system("clear");
+call    0 never executed
+    #####:  114:				ad.view_supplier_list();  //Calling view supplier  list function  of admin.
+call    0 never executed
+    #####:  115:				break;
+    #####:  116:			case 4:
+    #####:  117:				system("clear");
+call    0 never executed
+    #####:  118:				break;
+    #####:  119:			default:
+    #####:  120:				cout<<"\n\nInvalid choice!!!\n\n";
+call    0 never executed
+        -:  121:
+        -:  122:		}
+        -:  123:	}
+    #####:  124:	return EXIT_SUCCESS;
+        -:  125:}
+        -:  126:
+        -:  127:
+        -:  128:
+        -:  129:/**********************************************************************************
+        -:  130:
+        -:  131:FUNCTIONNAME: maintain_customer)
+        -:  132:DESCRIPTION:This function is used to maintain customer by admin like add,edit,
+        -:  133:delete and view customer.
+        -:  134:
+        -:  135: *********************************************************************************/
+function _ZN5Admin17maintain_customerEv called 0 returned 0% blocks executed 0%
+    #####:  136:int Admin::maintain_customer()
+        -:  137:{
+        -:  138:
+        -:  139:	int choice;
+    #####:  140:	while(choice!=4)
+branch  0 never executed
+branch  1 never executed
+        -:  141:	{                    //Display maintain customer menu.
+    #####:  142:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:  143:		cout<<"              Maintain Customer ";
+call    0 never executed
+    #####:  144:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:  145:		cout<<"\n\t1.Edit Customer\n\t2.Remove Customer\n\t3.View list\n\t4.Exit"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  146:		cout<<endl<<"\nEnter your choice:\n";
+call    0 never executed
+call    1 never executed
+    #####:  147:		cin>>temp;
+call    0 never executed
+        -:  148:		try 
+        -:  149:		{
+    #####:  150:			choice=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  151:		}
+    =====:  152:		catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:  153:		{
+    =====:  154:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  155:			continue;
+        -:  156:		}
+    #####:  157:		switch(choice)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  158:		{
+    #####:  159:			case 1: system("clear");
+call    0 never executed
+    #####:  160:				ad.edit_customer();  //Calling edit customer function of admin.
+call    0 never executed
+    #####:  161:				break;
+    #####:  162:			case 2: system("clear");
+call    0 never executed
+    #####:  163:				ad.remove_customer();  //Calling remove customer function  of admin.
+call    0 never executed
+    #####:  164:				break;
+    #####:  165:			case 3: system("clear");
+call    0 never executed
+    #####:  166:				ad.view_customer_list();  //Calling view customer list function of admin.
+call    0 never executed
+    #####:  167:				break;
+    #####:  168:			case 4:
+    #####:  169:				system("clear");
+call    0 never executed
+    #####:  170:				break;
+        -:  171:
+    #####:  172:			default:
+    #####:  173:				cout<<"\nInvalid choice!!!\n\n";
+call    0 never executed
+        -:  174:
+        -:  175:		}
+        -:  176:	}
+    #####:  177:	return EXIT_SUCCESS;
+        -:  178:}
+        -:  179:
+        -:  180:
+        -:  181:
+        -:  182:/**********************************************************************************
+        -:  183:
+        -:  184:FUNCTIONNAME: admin_corner()
+        -:  185:DESCRIPTION:This function is used to display various features that admin can perform.
+        -:  186:
+        -:  187: *********************************************************************************/
+function _Z12admin_cornerv called 0 returned 0% blocks executed 0%
+    #####:  188:int admin_corner()
+        -:  189:{
+        -:  190:
+        -:  191:	int choice;
+    #####:  192:	while(choice!=8)
+branch  0 never executed
+branch  1 never executed
+        -:  193:	{	
+        -:  194:		//Displaying Main Menu of admin.
+    #####:  195:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:  196:		cout<<"               Admin DashBoard ";
+call    0 never executed
+    #####:  197:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+    #####:  198:		cout<<"\n\t1.Maintain Supplier\n\t2.Maintain Customer\n\t3.Maintain Product\n\t4.Show Top 3 Selling Product\n\t5.Order Stock\n\t6.Show Stock Report\n\t7.Transaction report\n\t8.Logout";
+call    0 never executed
+        -:  199:
+    #####:  200:		cout<<endl<<"\n\nEnter your choice: \n";
+call    0 never executed
+call    1 never executed
+    #####:  201:		cin>>temp;
+call    0 never executed
+        -:  202:		try 
+        -:  203:		{
+    #####:  204:			choice=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  205:		}
+    =====:  206:		catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:  207:		{
+    =====:  208:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  209:			continue;
+        -:  210:		}
+    #####:  211:		switch(choice)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  212:		{
+    #####:  213:			case 1: system("clear");
+call    0 never executed
+    #####:  214:				ad.maintain_supplier();  //Calling maintain supplier function of admin.
+call    0 never executed
+    #####:  215:				break;
+    #####:  216:			case 2:	system("clear");
+call    0 never executed
+    #####:  217:				ad.maintain_customer();	 //Calling maintain customer function  of admin.
+call    0 never executed
+    #####:  218:				break;
+    #####:  219:			case 3: system("clear");
+call    0 never executed
+    #####:  220:				ad.maintain_product();   //Calling maintain product function of admin.
+call    0 never executed
+    #####:  221:				break;
+    #####:  222:			case 4: system("clear");
+call    0 never executed
+    #####:  223:				ad.top_three_product();     //Calling top 3 product function of admin.
+call    0 never executed
+    #####:  224:				break;
+    #####:  225:			case 5: system("clear");
+call    0 never executed
+    #####:  226:				ad.order_stock();      //Calling order stock function of admin.
+call    0 never executed
+    #####:  227:				break;
+    #####:  228:			case 6: system("clear");
+call    0 never executed
+    #####:  229:				ad.stock_report();     //Calling stock report function of admin.
+call    0 never executed
+    #####:  230:				break;
+    #####:  231:			case 7: system("clear");
+call    0 never executed
+    #####:  232:				ad.view_transactions();  //Calling view transactions function of admin.
+call    0 never executed
+    #####:  233:				break;
+    #####:  234:			case 8: 
+    #####:  235:				system("clear");
+call    0 never executed
+    #####:  236:				break;
+    #####:  237:			default: 
+    #####:  238:				cout<<"\n\nInvalid choice!!!\n\n";
+call    0 never executed
+        -:  239:		}
+        -:  240:	}
+        -:  241:
+    #####:  242:	return EXIT_SUCCESS;
+        -:  243:}
+        -:  244:
+        -:  245:
+        -:  246:
+        -:  247:/**********************************************************************************
+        -:  248:
+        -:  249:FUNCTIONNAME: supplier_corner()
+        -:  250:DESCRIPTION:This function is used to display supplier corner menu
+        -:  251:
+        -:  252: *********************************************************************************/
+function _Z15supplier_cornerv called 1 returned 100% blocks executed 56%
+        1:  253:int supplier_corner()
+        -:  254:{                     
+        1:  255:	int choice=0;
+        1:  256:	supplier s;
+call    0 returned 1
+call    1 never executed
+        4:  257:	while(choice!=3)
+branch  0 taken 3 (fallthrough)
+branch  1 taken 1
+        -:  258:	{   //Display supplier corner menu.
+        3:  259:		cout<<"\n-------------------------------------------\n";
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  260:		cout<<"              Supplier Corner ";
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  261:		cout<<"\n-------------------------------------------\n";
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  262:		cout<<"\n\t1.Supplier Registration\n\t2.login\n\t3.Exit";
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  263:		cout<<endl<<"\nEnter your choice: \n";
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  264:		cin>>temp;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  265:		try 
+        -:  266:		{
+        3:  267:			choice=stoi(temp);
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  268:		}
+    =====:  269:		catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:  270:		{
+    =====:  271:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  272:			continue;
+        -:  273:		}
+        3:  274:		switch(choice)
+branch  0 taken 1
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 0
+        -:  275:		{
+        1:  276:			case 1:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  277:				s.register_supplier();      //Calling Register supplier funcion
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  278:				break;	
+        1:  279:			case 2:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  280:				s.login_supplier();        //Calling Login supplier function
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  281:				break;
+        1:  282:			case 3:
+        1:  283:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  284:				break;
+    #####:  285:			default:
+    #####:  286:				cout<<"\n\nInvalid choice!!!\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  287:
+        -:  288:		}
+        -:  289:	}
+        2:  290:	return EXIT_SUCCESS;
+call    0 returned 1
+        -:  291:}
+        -:  292:
+        -:  293:
+        -:  294:
+        -:  295:
+        -:  296:
+        -:  297:/**********************************************************************************
+        -:  298:
+        -:  299:FUNCTIONNAME: customer_corner()
+        -:  300:DESCRIPTION:This function is used to display customer corner menu
+        -:  301:
+        -:  302: *********************************************************************************/
+function _Z15customer_cornerv called 0 returned 0% blocks executed 0%
+    #####:  303:int customer_corner()
+        -:  304:{
+    #####:  305:	int choice=0;
+    #####:  306:	customer c;
+call    0 never executed
+call    1 never executed
+    #####:  307:	while(choice!=3)
+branch  0 never executed
+branch  1 never executed
+        -:  308:	{  //display customer menu.
+    #####:  309:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  310:		cout<<"              Customer Corner ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  311:		cout<<"\n-------------------------------------------\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  312:		cout<<"\n\t1.Customer Registration\n\t2.login\n\t3.Exit";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  313:		cout<<endl<<"\nEnter your choice: \n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  314:		cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  315:		try 
+        -:  316:		{
+    #####:  317:			choice=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  318:		}
+    =====:  319:		catch(exception ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        -:  320:		{
+    =====:  321:			cout<<endl<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  322:			continue;
+        -:  323:		}
+    #####:  324:		switch(choice)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  325:		{
+    #####:  326:			case 1:	system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  327:				c.register_customer();      //Calling Register customer funcion
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  328:				break;	
+    #####:  329:			case 2:	system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  330:				c.login_customer();        //Calling Login customer function
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  331:				break;
+    #####:  332:			case 3:
+    #####:  333:				system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  334:				break;
+    #####:  335:			default:
+    #####:  336:				cout<<"\n\nInvalid choice!!!\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  337:		}
+        -:  338:	}
+    #####:  339:	return EXIT_SUCCESS;
+call    0 never executed
+        -:  340:}
+        -:  341:
+        -:  342:
+        -:  343:
+        -:  344:/**********************************************************************************
+        -:  345:
+        -:  346:FUNCTIONNAME: login_supplier()
+        -:  347:DESCRIPTION:This function is used to login supplier
+        -:  348:
+        -:  349: *********************************************************************************/
+function _ZN8supplier14login_supplierEv called 1 returned 100% blocks executed 60%
+        1:  350:int supplier::login_supplier()
+        -:  351:{
+        1:  352:	int choice=0;
+        -:  353:	int id;
+        1:  354:	int flag=0;
+        1:  355:	if(sup.empty())  //Checking if supplier list is empty.
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  356:	{
+    #####:  357:		cout<<"\nSupplier List is empty!!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  358:		return EXIT_FAILURE;
+        -:  359:	}
+        1:  360:	id=validations::take_supplier_id();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  361:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  362:	list<supplier>::iterator it=sup.begin();
+call    0 returned 1
+       1*:  363:	for(;it!=sup.end();it++)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+call    4 never executed
+        -:  364:	{
+        1:  365:		if(it->get_supplier_id()==id)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        -:  366:		{
+        1:  367:			int flag=1;
+        3:  368:			while(choice!=6)
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  369:			{	
+        -:  370:				//Displaying Main Menu of supplier.
+        2:  371:				cout<<"\n-------------------------------------------\n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  372:				cout<<"              Supplier DashBoard ";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  373:				cout<<"\n-------------------------------------------\n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  374:				cout<<"       Welcome, Supplier: "<<it->get_supplier_name()<<"\n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+call   13 returned 2
+call   14 never executed
+        2:  375:				cout<<"\n\t1.View Details\n\t2.Edit Details\n\t3.Add Product\n\t4.Edit Supplied Product\n\t5.View Product Supplied\n\t6.Exit";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  376:				choice=validations::take_choice();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  377:				switch(choice)
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 1
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 1
+branch  6 taken 0
+        -:  378:				{
+    #####:  379:					case 1:	system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  380:						it->view_supplier(); //Calling view supplier function of supplier.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  381:						break;	
+    #####:  382:					case 2:	system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  383:						it->edit_supplier_details();  //Calling edit supplier details function of supplier. 
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  384:						break;
+        1:  385:					case 3:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  386:						it->add_product();  //Calling add product function of supplier.
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  387:						break;
+    #####:  388:					case 4: system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  389:						it->edit_product(); //Calling edit product function of supplier.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  390:						break;
+    #####:  391:					case 5: system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  392:						it->products_supplied();  //Calling products supplied function of supplier.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  393:						break;
+        1:  394:					case 6: 
+        1:  395:						system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  396:						break;
+    #####:  397:					default: 
+    #####:  398:						cout<<"\n\nInvalid choice!!!\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  399:				}
+        -:  400:			}
+        1:  401:			break;
+        -:  402:		}
+        -:  403:	}
+        1:  404:	if(flag==0 && choice!=6)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  405:	{
+    #####:  406:		cout<<"\n\nYou have entered Incorrect Supplier ID: "<<id<<"\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  407:	}
+        1:  408:	return EXIT_SUCCESS;
+        -:  409:}
+        -:  410:
+        -:  411:
+        -:  412:
+        -:  413:/**********************************************************************************
+        -:  414:
+        -:  415:FUNCTIONNAME: login_customer()
+        -:  416:DESCRIPTION:This function is used to login customer
+        -:  417:
+        -:  418: *********************************************************************************/
+function _ZN8customer14login_customerEv called 0 returned 0% blocks executed 0%
+    #####:  419:int customer::login_customer()
+        -:  420:{
+    #####:  421:	int choice=0;
+        -:  422:	int id;
+    #####:  423:	int flag=0;
+    #####:  424:	if(cust.empty()) //Checking if customer list is empty
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  425:	{
+    #####:  426:		cout<<"\nCustomer List is empty!!!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  427:		return EXIT_FAILURE;
+        -:  428:	}
+    #####:  429:	id=validations::take_customer_id();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  430:	system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  431:	list<customer>::iterator it=cust.begin();
+call    0 never executed
+    #####:  432:	for(;it!=cust.end();it++)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+        -:  433:	{
+    #####:  434:		if(it->get_customer_id()==id)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  435:		{
+    #####:  436:			int flag=1;
+    #####:  437:			while(choice!=6)
+branch  0 never executed
+branch  1 never executed
+        -:  438:			{	 //Display main menu of customer
+    #####:  439:				cout<<"\n-------------------------------------------\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  440:				cout<<"               Customer DashBoard ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  441:				cout<<"\n-------------------------------------------\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  442:				cout<<"\n       Welcome, Customer: "<<it->get_customer_name()<<"\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+call   14 never executed
+    #####:  443:				cout<<"\n\t1.View Products\n\t2.Place order\n\t3.View Transacion history\n\t4.View Your Details\n\t5.Edit Details\n\t6.Exit";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  444:				choice=validations::take_choice();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  445:				customer *ptr=new customer();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+        -:  446:
+    #####:  447:				switch(choice)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:  448:				{
+    #####:  449:					case 1: system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  450:						it->view_items(); //Calling view item function of customer.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  451:						break;
+    #####:  452:					case 3: system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  453:						it->view_transaction_history(); //Calling view transaction history function  of customer.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  454:						break;
+    #####:  455:					case 4: system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  456:						it->view_customer();  //Calling view customer function of customer.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  457:						break;
+    #####:  458:					case 5: system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  459:						it->edit_customer_details(); //Calling edit customer details function of customer.
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  460:						break;
+    #####:  461:					case 6: 
+    #####:  462:						system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  463:						break;
+    #####:  464:					default: 
+    #####:  465:						cout<<"\nInvalid choice!!!\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  466:
+    #####:  467:					case 2:	system("clear");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  468:						ptr->customer_id=it->get_customer_id();
+call    0 never executed
+call    1 never executed
+    #####:  469:						thread t1(&customer::place_order,ptr);  // Calling place order function of customer.
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+    #####:  470:						t1.join();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  471:						break;
+        -:  472:				}
+        -:  473:			}
+    #####:  474:			break;
+        -:  475:		}
+        -:  476:	}
+    #####:  477:	if(flag==0 && choice!=6)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  478:	{
+    #####:  479:		cout<<"\n\nYou have entered Incorrect Customer ID: "<<id<<"\n\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  480:	}
+    #####:  481:	return EXIT_SUCCESS;
+        -:  482:}

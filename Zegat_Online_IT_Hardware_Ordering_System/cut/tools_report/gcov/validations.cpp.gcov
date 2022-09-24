@@ -1,0 +1,436 @@
+        -:    0:Source:validations.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/**********************************************************************************
+        -:    2:
+        -:    3:
+        -:    4:FILENAME: validations.cpp
+        -:    5:DESCRIPTION:This file is used for validations.
+        -:    6:
+        -:    7:DATE            NAME              REASON
+        -:    8:------------------------------------------------------------------
+        -:    9:19/9/22         Group-4          This is done for validation purpose 	
+        -:   10:
+        -:   11: *********************************************************************************/
+        -:   12:#ifndef VALIDATIONS
+        -:   13:#define VALIDATIONS
+        -:   14:#include <iostream>
+        -:   15:#include <iomanip>
+        -:   16:#include <cctype>
+        -:   17:#include <string>
+        -:   18:using namespace std;
+        -:   19:
+        -:   20:class validations
+        -:   21:{
+        -:   22:
+        -:   23:	public:
+        -:   24:
+        -:   25:		/**********************************************************************************
+        -:   26:
+        -:   27:
+        -:   28:			FUNCTIONNAME: check_string
+        -:   29:			DESCRIPTION:This function  is used to check whehter given string is valid or not
+        -:   30:
+        -:   31:		 *********************************************************************************/
+function _ZN11validations12check_stringENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 82%
+        1:   32:		static bool check_string(string s)
+        -:   33:		{
+        1:   34:			int flag=0;
+        8:   35:			for(int i=0;i<s.length();i++)
+call    0 returned 8
+branch  1 taken 7 (fallthrough)
+branch  2 taken 1
+        -:   36:			{
+        7:   37:				if(!isalpha(s[i]))
+call    0 returned 7
+branch  1 taken 0 (fallthrough)
+branch  2 taken 7
+        -:   38:				{
+    #####:   39:					flag=1;
+    #####:   40:					break;
+        -:   41:				}
+        -:   42:			}
+        1:   43:			if(flag==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:   44:			{
+    #####:   45:				return true;
+        -:   46:			}
+        -:   47:			else
+        -:   48:			{
+        1:   49:				return false;
+        -:   50:			}
+        -:   51:		}
+        -:   52:
+        -:   53:
+        -:   54:
+        -:   55:
+        -:   56:		/**********************************************************************************
+        -:   57:
+        -:   58:
+        -:   59:			FUNCTIONNAME: check_name
+        -:   60:			DESCRIPTION:This function  is used to check whether given string is valid as name or not
+        -:   61:
+        -:   62:		 *********************************************************************************/
+function _ZN11validations10check_nameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 74%
+        1:   63:		static bool check_name(string name)
+        -:   64:		{
+       1*:   65:			if(name[0]==' '||(name[0]=='\t'))
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+        -:   66:			{
+    #####:   67:				return true;
+        -:   68:			}
+        1:   69:			int flag=0;
+        8:   70:			for(int i=0;i<name.length();i++)
+call    0 returned 8
+branch  1 taken 7 (fallthrough)
+branch  2 taken 1
+        -:   71:			{
+       7*:   72:				if(!isalpha(name[i])&&name[i]!=' ')
+call    0 returned 7
+branch  1 taken 0 (fallthrough)
+branch  2 taken 7
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 taken 0 (fallthrough)
+branch  7 taken 7
+        -:   73:				{
+    #####:   74:					flag=1;
+    #####:   75:					break;
+        -:   76:				}
+        -:   77:			}
+       1*:   78:			if((flag==1)||(name.length()<4||name.length()>25))
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+call    5 returned 1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+branch  8 taken 0 (fallthrough)
+branch  9 taken 1
+        -:   79:			{
+    #####:   80:				return true;
+        -:   81:			}
+        -:   82:			else
+        -:   83:			{
+        1:   84:				return false;
+        -:   85:			}
+        -:   86:		}
+        -:   87:
+        -:   88:
+        -:   89:
+        -:   90:
+        -:   91:		/**********************************************************************************
+        -:   92:
+        -:   93:
+        -:   94:			FUNCTIONNAME: check address
+        -:   95:			DESCRIPTION:This function  is used to check whether given string is valid as address or not
+        -:   96:
+        -:   97:		 *********************************************************************************/
+function _ZN11validations13check_addressENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 80%
+        1:   98:		static bool check_address(string address)
+        -:   99:		{
+       1*:  100:			if(address[0]==' '||(address[0]=='\t')||address[0]=='\n')
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+        -:  101:			{
+    #####:  102:				return true;
+        -:  103:			}
+       1*:  104:			if(address.length()<4||address.length()>40)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+        -:  105:			{
+    #####:  106:				return true;
+        -:  107:			}
+        1:  108:			return false;
+        -:  109:		}
+        -:  110:
+        -:  111:
+        -:  112:
+        -:  113:
+        -:  114:		/**********************************************************************************
+        -:  115:
+        -:  116:
+        -:  117:			FUNCTIONNAME: check_digit
+        -:  118:			DESCRIPTION:This function  is used to check whether given string has only digits or not
+        -:  119:
+        -:  120:		 *********************************************************************************/
+function _ZN11validations11check_digitENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 82%
+        6:  121:		static bool check_digit(string d)
+        -:  122:		{
+        6:  123:			int flag=0;
+       28:  124:			for(int i=0;i<d.length();i++)
+call    0 returned 28
+branch  1 taken 22 (fallthrough)
+branch  2 taken 6
+        -:  125:			{
+       22:  126:				if(!isdigit(d[i]))
+call    0 returned 22
+branch  1 taken 0 (fallthrough)
+branch  2 taken 22
+        -:  127:				{
+    #####:  128:					flag=1;
+    #####:  129:					break;
+        -:  130:				}
+        -:  131:			}
+        6:  132:			if(flag==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+        -:  133:			{
+    #####:  134:				return true;
+        -:  135:			}
+        -:  136:			else
+        -:  137:			{
+        6:  138:				return false;
+        -:  139:			}
+        -:  140:		}
+        -:  141:
+        -:  142:
+        -:  143:
+        -:  144:
+        -:  145:		/**********************************************************************************
+        -:  146:
+        -:  147:
+        -:  148:			FUNCTIONNAME: take_choice
+        -:  149:			DESCRIPTION:This function  is used to input users choice and validate it
+        -:  150:
+        -:  151:		 *********************************************************************************/
+function _ZN11validations11take_choiceEv called 2 returned 100% blocks executed 59%
+        2:  152:		static int take_choice()
+        -:  153:		{
+        2:  154:			int choice=0;
+        2:  155:			string ch;
+call    0 returned 2
+call    1 never executed
+        -:  156:			while(1)
+        -:  157:			{
+       2*:  158:				cout<<"\nEnter Choice: \n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  159:				cin>>ch;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       2*:  160:				if(check_digit(ch))
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 2
+call    9 never executed
+        -:  161:				{
+    #####:  162:					cout<<"\nChoice can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  163:					continue;
+        -:  164:				}
+        -:  165:				else
+        -:  166:				{
+        2:  167:					choice=stoi(ch);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  168:					break;
+        -:  169:				}
+        -:  170:			}
+        4:  171:			return choice;
+call    0 returned 2
+        -:  172:		}
+        -:  173:
+        -:  174:
+        -:  175:
+        -:  176:
+        -:  177:		/**********************************************************************************
+        -:  178:
+        -:  179:
+        -:  180:			FUNCTIONNAME: password_check
+        -:  181:			DESCRIPTION:This function  is used to input a password and authenticate it.
+        -:  182:
+        -:  183:		 *********************************************************************************/
+function _ZN11validations14password_checkEv called 0 returned 0% blocks executed 0%
+    #####:  184:		static bool password_check()
+        -:  185:		{
+    #####:  186:			string pass;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  187:			cout<<"\nEnter Password:\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  188:			cin>>pass;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  189:			if(pass.compare("ABC@123")==0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  190:			{
+    #####:  191:				return true;
+        -:  192:			}
+    #####:  193:			return false;
+        -:  194:		}
+        -:  195:
+        -:  196:
+        -:  197:
+        -:  198:		/**********************************************************************************
+        -:  199:
+        -:  200:
+        -:  201:			FUNCTIONNAME:take_supplier_id 
+        -:  202:			DESCRIPTION:This function  is used to take supplier id as input and validate it 
+        -:  203:
+        -:  204:		 *********************************************************************************/
+function _ZN11validations16take_supplier_idEv called 1 returned 100% blocks executed 59%
+        1:  205:		static int take_supplier_id()
+        -:  206:		{
+        1:  207:			int id=0;
+        1:  208:			string check;
+call    0 returned 1
+call    1 never executed
+        -:  209:			while(1)
+        -:  210:			{
+       1*:  211:				cout<<"\nEnter Supplier Id: \n";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  212:				cin>>check;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  213:				if(check_digit(check))
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+        -:  214:				{
+    #####:  215:					cout<<"\nSupplier Id can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  216:					continue;
+        -:  217:				}
+        -:  218:				else
+        -:  219:				{
+        1:  220:					id=stoi(check);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  221:					break;
+        -:  222:				}
+        -:  223:			}
+        2:  224:			return id;
+call    0 returned 1
+        -:  225:		}
+        -:  226:
+        -:  227:
+        -:  228:
+        -:  229:		/**********************************************************************************
+        -:  230:
+        -:  231:
+        -:  232:			FUNCTIONNAME:take_customer_id 
+        -:  233:			DESCRIPTION:This function  is used to take customer id as input and validate it 
+        -:  234:
+        -:  235:		 *********************************************************************************/
+function _ZN11validations16take_customer_idEv called 0 returned 0% blocks executed 0%
+    #####:  236:		static int take_customer_id()
+        -:  237:		{
+    #####:  238:			int id=0;
+    #####:  239:			string check;
+call    0 never executed
+call    1 never executed
+        -:  240:			while(1)
+        -:  241:			{
+    #####:  242:				cout<<"\nEnter Customer Id: \n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  243:				cin>>check;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  244:				if(check_digit(check))
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+        -:  245:				{
+    #####:  246:					cout<<"\nCustomer Id can be digits only!!!\n"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  247:					continue;
+        -:  248:				}
+        -:  249:				else
+        -:  250:				{
+    #####:  251:					id=stoi(check);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  252:					break;
+        -:  253:				}
+        -:  254:			}
+    #####:  255:			return id;
+call    0 never executed
+        -:  256:		}
+        -:  257:};
+        -:  258:#endif
+        -:  259:
+        -:  260:
+        -:  261:
+        -:  262:
+        -:  263:
+        -:  264:
